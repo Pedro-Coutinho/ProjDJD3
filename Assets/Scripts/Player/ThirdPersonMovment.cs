@@ -15,8 +15,8 @@ public class ThirdPersonMovment : MonoBehaviour
     public CharacterController controler;
     public Animator animator;
     public Transform cam;
-    public ParticleSystem doubleJumpParticalLeft;
-    public ParticleSystem doubleJumpParticalRight;
+    //public ParticleSystem doubleJumpParticalLeft;
+    //public ParticleSystem doubleJumpParticalRight;
 
     private float turnSmothVelocity;
 
@@ -148,8 +148,8 @@ public class ThirdPersonMovment : MonoBehaviour
         }
         else if (canDoubleJump)
         {
-            doubleJumpParticalLeft.Play();
-            doubleJumpParticalRight.Play();
+            //doubleJumpParticalLeft.Play();
+            //doubleJumpParticalRight.Play();
             animator.SetTrigger("DoubleJump");
             directionY.y = playerData.jumpSpeed * playerData.doubleJumpMultiplier;
             canDoubleJump = false;
