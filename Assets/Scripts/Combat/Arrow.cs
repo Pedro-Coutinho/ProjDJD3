@@ -29,6 +29,7 @@ public class Arrow : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.gameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
+            other.gameObject.transform.GetComponent<Enemy>().animator.SetTrigger("Hit");
             Destroy(gameObject);
         }
     }

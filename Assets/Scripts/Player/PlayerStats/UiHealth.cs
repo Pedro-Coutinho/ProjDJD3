@@ -22,7 +22,7 @@ public class UiHealth : MonoBehaviour
         {
             playerstats.currentHeath = 0;
         }
-        healthText.text =  playerstats.currentHeath + "/20";
+        healthText.text =  playerstats.currentHeath + "/10";
         healthBar.value = 1 - (playerstats.playerHealth - playerstats.currentHeath) / playerstats.playerHealth;
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ebf7a75e39d4f4893f473f7af6e56f, type: 3}
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
-  health: 2
-  rangeToShoot: 30
+  health: 3
+  rangeToShoot: 20
   burstShoot: 0
   spreadShoot: 0
   shootTimeCicle: 0.5

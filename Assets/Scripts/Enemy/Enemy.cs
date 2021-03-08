@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public EnemyStats enemyStats;
+    public Animator animator;
 
     private GameObject player;
     [HideInInspector]
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = (player.transform.position - gameObject.transform.position).magnitude;
-        if (distanceToPlayer < enemyStats.rangeToShoot)
+        if (distanceToPlayer < enemyStats.rangeToShoot && isDead == false)
         {
             float step = 100 * Time.deltaTime;
 
@@ -37,7 +38,8 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(newDirection);
             
         }
-        CheckIfDead();
+        if (isDead == false)
+            CheckIfDead();
 
     }
 
@@ -46,7 +48,8 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             // Set Dead animation Here
-            gameObject.SetActive(false);
+            animator.SetBool("Dead", true);
+            //gameObject.SetActive(false);
             isDead = true;
         }
     }

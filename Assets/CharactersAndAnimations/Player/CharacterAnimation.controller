@@ -54,7 +54,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Running Forward Flip
+  m_Name: DoubleJump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -276,7 +276,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Breathing Idle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -511,7 +511,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 13cde337b84e388498471515b2cde365, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 218cf2465860f6c4fa4143e49c8ee384, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -546,7 +546,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Standing Aim Recoil
+  m_Name: Shoot
   m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
@@ -573,7 +573,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword And Shield Jump
+  m_Name: Jump
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

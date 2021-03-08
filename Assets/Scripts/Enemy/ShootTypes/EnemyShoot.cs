@@ -9,15 +9,23 @@ public class EnemyShoot : MonoBehaviour
     public GameObject enemyShoot;
     public GameObject enemyRightShoot;
     public GameObject enemyLeftShoot;
+    public Animator animator;
 
     private bool canShoot = true;
 
+    private Enemy enemy;
+
+    private void Start()
+    {
+        enemy = gameObject.transform.GetComponent<Enemy>();
+    }
     // Update is called once per frame
     void Update()
     {
         float distanceToPlayer = (player.position - gameObject.transform.position).magnitude;
-        if (distanceToPlayer < enemyType.rangeToShoot)
+        if (distanceToPlayer < enemyType.rangeToShoot && enemy.isDead == false)
         {
+            animator.SetBool("Atack", true);
             if (canShoot && enemyType.burstShoot == false && enemyType.spreadShoot == false)
             {
                 Instantiate(enemyShoot, gameObject.transform.position, Quaternion.identity);
@@ -38,6 +46,10 @@ public class EnemyShoot : MonoBehaviour
                 StartCoroutine(waitCicle(enemyType.shootTimeCicle));
             }
             
+        }
+        else
+        {
+            animator.SetBool("Atack", false);
         }
     }
 

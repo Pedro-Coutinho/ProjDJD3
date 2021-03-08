@@ -56,7 +56,18 @@ public class ThirdPersonMovment : MonoBehaviour
 
     private void Roll()
     {
+        Vector3 temp = moveDir;
+        inputs.Gameplay.Disable();
+        moveDir = temp;
         animator.SetTrigger("Roll");
+        StartCoroutine(EnableInputsAfterRoll());
+    }
+    IEnumerator EnableInputsAfterRoll()
+    {
+        Debug.Log(moveDir);
+        yield return new WaitForSeconds(1);
+        inputs.Gameplay.Enable();
+        StopMove();
     }
     // Update is called once per frame
     void Update()
