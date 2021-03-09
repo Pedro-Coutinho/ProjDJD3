@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
             //gameObject.SetActive(false);
             isDead = true;
             SpawnCurrency();
+            DestroyEnemy();
         }
     }
 
@@ -68,7 +69,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }

@@ -81,6 +81,8 @@ public class ThirdPersonMovment : MonoBehaviour
             Vector3 temp = moveDir;
             inputs.Gameplay.Disable();
             moveDir = temp;
+            playerData.speed = playerData.speed * 2;
+            currentSpeed = currentSpeed * 1.5f;
             animator.SetTrigger("Roll");
             StartCoroutine(EnableInputsAfterRoll());
         }
@@ -96,6 +98,7 @@ public class ThirdPersonMovment : MonoBehaviour
     {
         Debug.Log(moveDir);
         yield return new WaitForSeconds(1);
+        playerData.speed = playerData.speed / 2;
         inputs.Gameplay.Enable();
         StopMove();
     }

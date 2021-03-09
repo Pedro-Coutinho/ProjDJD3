@@ -8,11 +8,10 @@ public class CurrencyManager : MonoBehaviour
     public TextMeshProUGUI currencyText;
     public PlayerStats playerStats;
 
-    private int currentMoney;
     // Start is called before the first frame update
     void Start()
     {
-        currentMoney = playerStats.startCurrency;
+        playerStats.currentCurrency = playerStats.startCurrency;
         currencyText.text = playerStats.startCurrency.ToString();
     }
 
@@ -20,8 +19,8 @@ public class CurrencyManager : MonoBehaviour
     {
         if (other.tag == "Currency")
         {
-            currentMoney += Random.Range(24, 35);
-            currencyText.text = currentMoney.ToString();
+            playerStats.currentCurrency += Random.Range(24, 35);
+            currencyText.text = playerStats.currentCurrency.ToString();
             Destroy(other.gameObject);
         }
 
