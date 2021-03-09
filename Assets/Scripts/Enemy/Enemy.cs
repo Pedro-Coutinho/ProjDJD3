@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public EnemyStats enemyStats;
     public Animator animator;
+    public GameObject Currency;
 
     private GameObject player;
     [HideInInspector]
@@ -51,7 +52,18 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Dead", true);
             //gameObject.SetActive(false);
             isDead = true;
+            SpawnCurrency();
         }
+    }
+
+    private void SpawnCurrency()
+    {
+        for (int i = 0; i < enemyStats.nbrOfCurrencySpawned; i++)
+        {
+            GameObject c = Instantiate(Currency, gameObject.transform.position, Quaternion.identity);
+            c.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)) * 5, ForceMode.Impulse);
+        }
+        
     }
 
     IEnumerator DestroyEnemy()

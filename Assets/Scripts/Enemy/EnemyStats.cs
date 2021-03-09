@@ -14,5 +14,7 @@ public class EnemyStats : ScriptableObject
     public bool spreadShoot = false;
 
     public float shootTimeCicle;
+
+    public int nbrOfCurrencySpawned = 3;
 }
 

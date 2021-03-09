@@ -1985,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: b3e6894a1a7001d4e89aad43d92e4866, type: 2}
   animator: {fileID: 4911929991007057435}
+  Currency: {fileID: 5068459882462525, guid: fc27ced94e669ab4cb7f8f13b28e014d, type: 3}
   currentHealth: 0
   isDead: 0
 --- !u!114 &7953796373190548812
