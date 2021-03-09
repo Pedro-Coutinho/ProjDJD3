@@ -12,12 +12,15 @@ public class ThirdPersonMovment : MonoBehaviour
     PlayerControls inputs;
     public GameObject MainCamera;
     public Player playerData;
-    public CharacterController controler;
-    public Animator animator;
+    public PlayerStats playerStats;
+    
     public Transform cam;
+    public GameObject[] staminaBars;
     //public ParticleSystem doubleJumpParticalLeft;
     //public ParticleSystem doubleJumpParticalRight;
 
+    private CharacterController controler;
+    private Animator animator;
     private float turnSmothVelocity;
 
     private float currentSpeed;
@@ -31,10 +34,13 @@ public class ThirdPersonMovment : MonoBehaviour
     private Vector3 moveDir;
     private Vector2 move;
 
-     
+    private int currentStamina; 
 
     private void Awake()
     {
+        UpdateStaminaBar();
+        currentStamina = playerStats.staminaStat;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         gravityDirection = Vector3.down;
@@ -51,16 +57,40 @@ public class ThirdPersonMovment : MonoBehaviour
 
         inputs.Gameplay.Roll.performed += ctx => Roll();
 
+        controler = gameObject.GetComponent<CharacterController>();
+        animator = gameObject.GetComponent<Animator>();
         
+    }
+
+    private void UpdateStaminaBar()
+    {
+        // Set Stamina Bars
+        for (int i = 0; i < playerStats.staminaStat; i++)
+        {
+            staminaBars[i].SetActive(true);
+        }
     }
 
     private void Roll()
     {
-        Vector3 temp = moveDir;
-        inputs.Gameplay.Disable();
-        moveDir = temp;
-        animator.SetTrigger("Roll");
-        StartCoroutine(EnableInputsAfterRoll());
+        if (currentStamina > 0)
+        {
+            staminaBars[currentStamina - 1].SetActive(false);
+            currentStamina--;
+            StartCoroutine(StaminaColldown());
+            Vector3 temp = moveDir;
+            inputs.Gameplay.Disable();
+            moveDir = temp;
+            animator.SetTrigger("Roll");
+            StartCoroutine(EnableInputsAfterRoll());
+        }
+        
+    }
+    IEnumerator StaminaColldown()
+    {
+        yield return new WaitForSeconds(playerStats.staminaColldown);
+        staminaBars[currentStamina].SetActive(true);
+        currentStamina++;
     }
     IEnumerator EnableInputsAfterRoll()
     {

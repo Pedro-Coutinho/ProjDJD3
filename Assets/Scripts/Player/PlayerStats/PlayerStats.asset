@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   playerHealth: 10
+  staminaStat: 3
+  staminaColldown: 10
   currentHeath: 0

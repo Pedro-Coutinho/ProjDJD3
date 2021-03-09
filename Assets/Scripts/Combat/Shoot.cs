@@ -5,10 +5,11 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public Player playerData;
-    public Animator animator;
+    
     public GameObject Arrow;
     public Transform arrowSpawn;
 
+    private Animator animator;
     private bool canShoot = true;
 
     
@@ -16,6 +17,7 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         playerData.playerControls.Gameplay.Shoot.performed += ctx => ShootArrow();
     }
 
