@@ -250,11 +250,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 402504, guid: f256fa6981cae154cb0c414437bd1308, type: 3}
   m_PrefabInstance: {fileID: 10506224}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &11077083 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7953796373190548815, guid: d6a670bed8e6e2c4aba66de8a5ac2505, type: 3}
-  m_PrefabInstance: {fileID: 1646762387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &64713226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -572,7 +567,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149943973}
-  m_LocalRotation: {x: 0.15611406, y: 0.097646445, z: -0.01551111, w: 0.9827782}
+  m_LocalRotation: {x: 0.15611409, y: 0.097646475, z: -0.015511119, w: 0.9827782}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1652,11 +1647,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8874ec60e48b283469e0bdd07497369b, type: 3}
---- !u!1 &416564464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7953796373190548815, guid: d6a670bed8e6e2c4aba66de8a5ac2505, type: 3}
-  m_PrefabInstance: {fileID: 7953796373311412671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &429763979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4201,11 +4191,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 402504, guid: f256fa6981cae154cb0c414437bd1308, type: 3}
   m_PrefabInstance: {fileID: 1367627531}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1418394524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7953796373190548815, guid: d6a670bed8e6e2c4aba66de8a5ac2505, type: 3}
-  m_PrefabInstance: {fileID: 1724437588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1451789968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5230,10 +5215,6 @@ MonoBehaviour:
   CameraNormal: {fileID: 962137448}
   CameraAim: {fileID: 1852053899}
   CameraAim2: {fileID: 2081230504}
-  Enemies:
-  - {fileID: 1418394524}
-  - {fileID: 11077083}
-  - {fileID: 416564464}
   layerMask:
     serializedVersion: 2
     m_Bits: 1792
