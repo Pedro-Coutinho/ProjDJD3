@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class AimCamera : MonoBehaviour
 {
     public CinemachineVirtualCamera aimCamera;
@@ -14,7 +14,7 @@ public class AimCamera : MonoBehaviour
     public GameObject CameraNormal;
     public GameObject CameraAim;
     public GameObject CameraAim2;
-    public GameObject[] Enemies;
+    private GameObject[] Enemies;
 
     public LayerMask layerMask;
 
@@ -29,6 +29,7 @@ public class AimCamera : MonoBehaviour
     //private bool lockedOnEnemy = false;
     private void Start()
     {
+        
         enemysOnCameraView = new List<GameObject>();
         playerData.playerControls.Gameplay.Aim.performed += ctx => Aim();
         playerData.playerControls.Gameplay.Aim.canceled += ctx => CancelAim();
@@ -37,6 +38,7 @@ public class AimCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Enemies = GameObject.FindGameObjectsWithTag("Enemy");
         CheckForEnemy();
         checkIntersection();
         autoAim();
@@ -68,23 +70,32 @@ public class AimCamera : MonoBehaviour
             }
         }
 
+        if (Enemies == null)
+        {
+            CurrentClosetEnemy = null;
+        }
+
 
         // Working But needs to be better
-        if (enemysOnCameraView.Count != 0 && CurrentClosetEnemy != null && CurrentClosetEnemy.GetComponent<Enemy>().isDead == false)
+        if (CurrentClosetEnemy != null)
         {
-            AutoAimImage.transform.gameObject.SetActive(true);
-            AutoAimImage.transform.position = mainCamera.WorldToScreenPoint(CurrentClosetEnemy.transform.position);
-            if (aiming == false)
+            if (enemysOnCameraView.Count != 0 && CurrentClosetEnemy != null && CurrentClosetEnemy.GetComponent<Enemy>().isDead == false)
             {
-                aimCamera.LookAt = CurrentClosetEnemy.transform;
-                _currentTarget = CurrentClosetEnemy.transform.gameObject;
+                AutoAimImage.transform.gameObject.SetActive(true);
+                AutoAimImage.transform.position = mainCamera.WorldToScreenPoint(CurrentClosetEnemy.transform.position);
+                if (aiming == false)
+                {
+                    aimCamera.LookAt = CurrentClosetEnemy.transform;
+                    _currentTarget = CurrentClosetEnemy.transform.gameObject;
+                }
+            }
+
+            if (CurrentClosetEnemy.GetComponent<Enemy>().isDead == true)
+            {
+                AutoAimImage.transform.gameObject.SetActive(false);
             }
         }
-
-        if (CurrentClosetEnemy.GetComponent<Enemy>().isDead == true)
-        {
-            AutoAimImage.transform.gameObject.SetActive(false);
-        }
+        
     }
 
     // Cancels aim if there is an obstacle between
@@ -173,7 +184,6 @@ public class AimCamera : MonoBehaviour
         CameraAim.SetActive(false);
         CameraAim2.SetActive(false);
         aiming = false;
-
         StartCoroutine(EnemyLockFalse());
         
     }
@@ -181,8 +191,9 @@ public class AimCamera : MonoBehaviour
 
     IEnumerator EnemyLockFalse()
     {
-        yield return new WaitForSeconds(1);
-        playerData.enemylock = false;
+        yield return new WaitForSeconds(0.5f);
+        if (aiming == false)
+            playerData.enemylock = false;
     }
 
     private void CheckForEnemy()

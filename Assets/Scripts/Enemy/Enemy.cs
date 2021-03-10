@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
             //gameObject.SetActive(false);
             isDead = true;
             SpawnCurrency();
-            DestroyEnemy();
+            StartCoroutine(DestroyEnemy());
         }
     }
 
@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < enemyStats.nbrOfCurrencySpawned; i++)
         {
             GameObject c = Instantiate(Currency, gameObject.transform.position, Quaternion.identity);
-            c.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)) * 5, ForceMode.Impulse);
+            c.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(-1.0f, 1.0f)) * 5, ForceMode.Impulse);
         }
         
     }

@@ -9,7 +9,7 @@ public class Player : ScriptableObject
     [HideInInspector]
     public PlayerControls playerControls;
 
-    [HideInInspector]
+    
     public bool enemylock;
 
     [HideInInspector]
