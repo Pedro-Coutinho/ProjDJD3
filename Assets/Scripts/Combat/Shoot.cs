@@ -12,7 +12,8 @@ public class Shoot : MonoBehaviour
     private Animator animator;
     private bool canShoot = true;
 
-    
+    private Vector3 enemyDirection;
+    private Vector3 enemyPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,11 @@ public class Shoot : MonoBehaviour
     {
         if (canShoot && playerData.enemylock)
         {
+            enemyPosition = playerData.currentEnemyPosition;
+            enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
             animator.SetTrigger("Shoot");
             canShoot = false;
-            Instantiate(Arrow, arrowSpawn.position, Quaternion.Euler(0, 90, -90));
+            Instantiate(Arrow, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
             StartCoroutine(ShootTime());
         }
 
