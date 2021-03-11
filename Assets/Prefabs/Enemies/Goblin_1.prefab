@@ -2003,7 +2003,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: {fileID: 11400000, guid: b3e6894a1a7001d4e89aad43d92e4866, type: 2}
   player: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
   enemyShoot: {fileID: 153592, guid: 7d91c2aa08fab4641ae9d81342294090, type: 3}
+  areaOfEffectWarning: {fileID: 2205403942577756344, guid: dbcd97c5f99bdb84f9ee3e84476eda30, type: 3}
   animator: {fileID: 4911929991007057435}
 --- !u!136 &7953796373190548813
 CapsuleCollider:

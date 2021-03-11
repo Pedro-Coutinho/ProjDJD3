@@ -9,7 +9,7 @@ public class EnemyStats : ScriptableObject
 
     public float rangeToShoot = 3;
 
-    public bool burstShoot = false;
+    public bool areaOfEffect = false;
 
     public bool spreadShoot = false;
 
