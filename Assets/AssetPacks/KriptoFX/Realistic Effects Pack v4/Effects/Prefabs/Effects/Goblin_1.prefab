@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 19830782}
   - component: {fileID: 19914474}
   - component: {fileID: 11420816}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Trail1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145822}
   serializedVersion: 6
-  lengthInSec: 2.5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -187,7 +187,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.64289945, b: 0, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4759,15 +4759,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   DefaultSizeMultiplayer: {x: 0.25, y: 0.15}
-  VertexLifeTime: 2.5
+  VertexLifeTime: 0.6
   TrailLifeTime: 3
   UseShaderMaterial: 1
   TrailMaterial: {fileID: 2100000, guid: 439fac91adbf9304f8783c549b502345, type: 2}
   UseColorOverLifeTime: 0
   ColorOverLifeTime:
     serializedVersion: 2
-    key0: {r: 1, g: 0.70082057, b: 0, a: 1}
-    key1: {r: 0.6698113, g: 0.22838762, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4856,9 +4856,9 @@ GameObject:
   m_Component:
   - component: {fileID: 404350}
   - component: {fileID: 114794629964021254}
-  - component: {fileID: -1828413240937988610}
-  m_Layer: 8
-  m_Name: Basic_3
+  - component: {fileID: -6243060327965259012}
+  m_Layer: 9
+  m_Name: Goblin_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4895,17 +4895,17 @@ MonoBehaviour:
   UseLightShadows: 1
   UseFastFlatDecalsForMobiles: 1
   UseCustomColor: 1
-  EffectColor: {r: 0.8584906, g: 0.5642943, b: 0.10123708, a: 1}
+  EffectColor: {r: 0.5137255, g: 0.4784314, b: 0.9921569, a: 1}
   IsVisible: 1
   FadeoutTime: 1.5
   UseCollisionDetection: 1
   LimitMaxDistance: 0
   MaxDistnace: -1
   Mass: 1
-  Speed: 80
+  Speed: 20
   AirDrag: 0.01
   UseGravity: 0
---- !u!114 &-1828413240937988610
+--- !u!114 &-6243060327965259012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4914,9 +4914,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 153592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f4bfac23c9321f4790a16a19dc65c92, type: 3}
+  m_Script: {fileID: 11500000, guid: 188cd9da66615174c8bdd6c4bbfc183e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
 --- !u!1 &173436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4929,7 @@ GameObject:
   - component: {fileID: 435158}
   - component: {fileID: 19817496}
   - component: {fileID: 19985548}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9414,7 +9415,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: db11e7ccfdac33f4ba22e05ec357c3d7, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9472,7 +9472,7 @@ GameObject:
   - component: {fileID: 19843394}
   - component: {fileID: 19963194}
   - component: {fileID: 11457374}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Trail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9501,7 +9501,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173840}
   serializedVersion: 6
-  lengthInSec: 2.5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -9576,7 +9576,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9647,7 +9647,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.64289945, b: 0, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14219,15 +14219,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   DefaultSizeMultiplayer: {x: 0.25, y: 0.15}
-  VertexLifeTime: 3
+  VertexLifeTime: 1
   TrailLifeTime: 3
   UseShaderMaterial: 1
   TrailMaterial: {fileID: 2100000, guid: 439fac91adbf9304f8783c549b502345, type: 2}
   UseColorOverLifeTime: 0
   ColorOverLifeTime:
     serializedVersion: 2
-    key0: {r: 1, g: 0.70082057, b: 0, a: 1}
-    key1: {r: 0.6698113, g: 0.22838762, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -14318,7 +14318,7 @@ GameObject:
   - component: {fileID: 19846292}
   - component: {fileID: 19983724}
   - component: {fileID: 11429892}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Trail1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14348,7 +14348,7 @@ ParticleSystem:
   m_GameObject: {fileID: 192520}
   serializedVersion: 6
   lengthInSec: 2.5
-  simulationSpeed: 1
+  simulationSpeed: 4
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
@@ -14493,7 +14493,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8396226, g: 0.43926647, b: 0, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19065,15 +19065,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   DefaultSizeMultiplayer: {x: 0.8, y: 0}
-  VertexLifeTime: 1.5
+  VertexLifeTime: 0.3
   TrailLifeTime: 3
   UseShaderMaterial: 1
   TrailMaterial: {fileID: 2100000, guid: 439fac91adbf9304f8783c549b502345, type: 2}
   UseColorOverLifeTime: 0
   ColorOverLifeTime:
     serializedVersion: 2
-    key0: {r: 1, g: 0.70082057, b: 0, a: 1}
-    key1: {r: 0.6698113, g: 0.22838762, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -19162,7 +19162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550155646576554}
   - component: {fileID: 114917848333512336}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19230,7 +19230,7 @@ GameObject:
   - component: {fileID: 4884582574881694}
   - component: {fileID: 108187696760106776}
   - component: {fileID: 114653387553544182}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19262,7 +19262,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.811998, b: 0, a: 1}
+  m_Color: {r: 0.5175455, g: 0.47794116, b: 1, a: 1}
   m_Intensity: 1.5
   m_Range: 15
   m_SpotAngle: 30

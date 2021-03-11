@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
   health: 3
-  rangeToShoot: 20
+  rangeToShoot: 25
   burstShoot: 0
   spreadShoot: 0
-  shootTimeCicle: 0.5
+  shootTimeCicle: 2
   nbrOfCurrencySpawned: 3

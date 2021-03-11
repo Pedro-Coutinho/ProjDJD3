@@ -81,6 +81,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Abilitiy1"",
+                    ""type"": ""Button"",
+                    ""id"": ""db7d4e96-eb83-43df-8c4b-5a4c46d86f86"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -171,6 +179,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""618eeae3-75a0-4e83-92c2-a3f969c94e40"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Abilitiy1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +206,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
         m_Gameplay_SwitchEnemy = m_Gameplay.FindAction("SwitchEnemy", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_Gameplay_Abilitiy1 = m_Gameplay.FindAction("Abilitiy1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -244,6 +264,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Aim;
     private readonly InputAction m_Gameplay_SwitchEnemy;
     private readonly InputAction m_Gameplay_Interact;
+    private readonly InputAction m_Gameplay_Abilitiy1;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -256,6 +277,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
         public InputAction @SwitchEnemy => m_Wrapper.m_Gameplay_SwitchEnemy;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
+        public InputAction @Abilitiy1 => m_Wrapper.m_Gameplay_Abilitiy1;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -289,6 +311,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInteract;
+                @Abilitiy1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
+                @Abilitiy1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
+                @Abilitiy1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -317,6 +342,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Abilitiy1.started += instance.OnAbilitiy1;
+                @Abilitiy1.performed += instance.OnAbilitiy1;
+                @Abilitiy1.canceled += instance.OnAbilitiy1;
             }
         }
     }
@@ -331,5 +359,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnSwitchEnemy(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnAbilitiy1(InputAction.CallbackContext context);
     }
 }

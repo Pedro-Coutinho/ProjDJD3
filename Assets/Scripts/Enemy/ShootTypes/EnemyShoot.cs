@@ -7,13 +7,15 @@ public class EnemyShoot : MonoBehaviour
     public EnemyStats enemyType;
     public Transform player;
     public GameObject enemyShoot;
-    public GameObject enemyRightShoot;
-    public GameObject enemyLeftShoot;
+
     public Animator animator;
 
     private bool canShoot = true;
 
     private Enemy enemy;
+
+    private Vector3 playerDirection;
+    private Vector3 playerPosition;
 
     private void Start()
     {
@@ -28,22 +30,14 @@ public class EnemyShoot : MonoBehaviour
             animator.SetBool("Atack", true);
             if (canShoot && enemyType.burstShoot == false && enemyType.spreadShoot == false)
             {
-                Instantiate(enemyShoot, gameObject.transform.position, Quaternion.identity);
+                playerPosition = player.position + new Vector3(Random.Range(-1f, 1f), Random.Range(0.5f, 2.0f), Random.Range(-1f, 1f));
+                playerDirection = (playerPosition - gameObject.transform.position).normalized;
+                Instantiate(enemyShoot, gameObject.transform.position, Quaternion.LookRotation(playerDirection));
                 canShoot = false;
-                StartCoroutine(waitCicle(enemyType.shootTimeCicle));
-            }
-            else if (canShoot && enemyType.burstShoot == true)
-            {
-                canShoot = false;
-                StartCoroutine(burstCicle(enemyType.shootTimeCicle));
-            }
-            else if (canShoot && enemyType.spreadShoot == true)
-            {
-                Instantiate(enemyShoot, gameObject.transform.position, Quaternion.identity);
-                Instantiate(enemyRightShoot, gameObject.transform.position, Quaternion.identity);
-                Instantiate(enemyLeftShoot, gameObject.transform.position, Quaternion.identity);
-                canShoot = false;
-                StartCoroutine(waitCicle(enemyType.shootTimeCicle));
+
+                // Random Time Shoot
+                float rnd = Random.Range(enemyType.shootTimeCicle - 0.5f, enemyType.shootTimeCicle + 0.5f);
+                StartCoroutine(waitCicle(rnd));
             }
             
         }
@@ -53,7 +47,7 @@ public class EnemyShoot : MonoBehaviour
         }
     }
 
-    IEnumerator waitCicle( float waitTime)
+    IEnumerator waitCicle(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         canShoot = true;

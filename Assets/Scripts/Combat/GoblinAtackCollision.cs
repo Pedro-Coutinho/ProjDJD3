@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleCollision : MonoBehaviour
+public class GoblinAtackCollision : MonoBehaviour
 {
+    public PlayerStats playerStats;
     void Start()
     {
         var physicsMotion = GetComponentInChildren<RFX4_PhysicsMotion>(true);
@@ -19,7 +20,8 @@ public class ParticleCollision : MonoBehaviour
         //Debug.Log(e.HitPoint); //a collision coordinates in world space
         //Debug.Log(e.HitGameObject.name); //a collided gameobject
         //Debug.Log(e.HitCollider.name); //a collided collider :)
-        e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
+        if(e.HitGameObject.name == "Player")
+            playerStats.currentHeath -= 1;
     }
 
     IEnumerator DestroyAffterTime()

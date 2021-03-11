@@ -17,3 +17,4 @@ MonoBehaviour:
   burstShoot: 1
   spreadShoot: 0
   shootTimeCicle: 1.5
+  nbrOfCurrencySpawned: 3

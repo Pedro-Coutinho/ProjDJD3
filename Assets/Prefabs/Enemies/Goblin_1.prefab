@@ -2003,9 +2003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: {fileID: 11400000, guid: b3e6894a1a7001d4e89aad43d92e4866, type: 2}
   player: {fileID: 0}
-  enemyShoot: {fileID: 1879430358914978785, guid: 77de4ad8cacfc1e4497de01a209ab300, type: 3}
-  enemyRightShoot: {fileID: 1879430358914978785, guid: df806d41e00f07d4ba05e73e5ac1ba5f, type: 3}
-  enemyLeftShoot: {fileID: 1879430358914978785, guid: 50d1e2583f148ac48995b0f34b328eca, type: 3}
+  enemyShoot: {fileID: 153592, guid: 7d91c2aa08fab4641ae9d81342294090, type: 3}
   animator: {fileID: 4911929991007057435}
 --- !u!136 &7953796373190548813
 CapsuleCollider:
