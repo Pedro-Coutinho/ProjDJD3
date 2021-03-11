@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 19830782}
   - component: {fileID: 19914474}
   - component: {fileID: 11420816}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Trail1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4857,7 +4857,7 @@ GameObject:
   - component: {fileID: 404350}
   - component: {fileID: 114794629964021254}
   - component: {fileID: -1828413240937988610}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Basic_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4928,7 @@ GameObject:
   - component: {fileID: 435158}
   - component: {fileID: 19817496}
   - component: {fileID: 19985548}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9472,7 +9472,7 @@ GameObject:
   - component: {fileID: 19843394}
   - component: {fileID: 19963194}
   - component: {fileID: 11457374}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Trail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14318,7 +14318,7 @@ GameObject:
   - component: {fileID: 19846292}
   - component: {fileID: 19983724}
   - component: {fileID: 11429892}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Trail1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19162,7 +19162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550155646576554}
   - component: {fileID: 114917848333512336}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19230,7 +19230,7 @@ GameObject:
   - component: {fileID: 4884582574881694}
   - component: {fileID: 108187696760106776}
   - component: {fileID: 114653387553544182}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
