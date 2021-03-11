@@ -23,11 +23,12 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        playerData.playerControls.Gameplay.Shoot.performed += ctx => ShootArrow();
+        playerData.playerControls.Gameplay.Shoot.performed += ctx => BasicAbility();
         playerData.playerControls.Gameplay.Abilitiy1.performed += ctx => Ability1();
     }
 
-    private void ShootArrow()
+    // Spawns basic player ability
+    private void BasicAbility()
     {
         if (canShoot && playerData.enemylock)
         {
@@ -41,21 +42,28 @@ public class Shoot : MonoBehaviour
 
     }
 
+    // Spawns ability 1 (Area of Effect)
     private void Ability1()
     {
         if (canShootAbility1 && playerData.enemylock)
         {
+            // Calculates Enemy direction
             enemyPosition = playerData.currentEnemyPosition;
             enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
+
             animator.SetTrigger("Shoot");
             canShootAbility1 = false;
             Instantiate(Ability_1, playerData.currentEnemyPosition + new Vector3(0, -1, 0), Quaternion.LookRotation(enemyDirection));
+
+            // Courotine to ability coolDown
             StartCoroutine(Ability1Time());
 
-            
+            // Courotine to damage player after x time
             StartCoroutine(MeteorDamage(playerData.currentEnemyPosition));
         }
     }
+
+    // Courotine to damage player after x time
     IEnumerator MeteorDamage(Vector3 centerPos)
     {
         yield return new WaitForSeconds(1f);
@@ -64,6 +72,8 @@ public class Shoot : MonoBehaviour
         foreach (GameObject enemie in Enemies)
         {
             float dist = (enemie.transform.position - centerPos).magnitude;
+
+            // Deals more damage depending on the distance to the center of the spawn
             if (dist < 1)
             {
                 enemie.transform.GetComponent<Enemy>().currentHealth -= 3;
@@ -79,6 +89,8 @@ public class Shoot : MonoBehaviour
         }
 
     }
+
+    // Courotine to ability coolDown
     IEnumerator Ability1Time()
     {
         yield return new WaitForSeconds(2);
@@ -88,10 +100,5 @@ public class Shoot : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         canShoot = true;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
