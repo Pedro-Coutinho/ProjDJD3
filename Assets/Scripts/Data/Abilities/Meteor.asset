@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2ace867b5d03e40ad6a706699ad5a4, type: 3}
   m_Name: Meteor
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 0}
-  type: 0
+  abilityPrefab: {fileID: 1908032145150028, guid: 3fc0a26d09ca89a4f8ef0e417730ffd2, type: 3}
+  level: 0
+  type: 1
+  cooldowTime: 4
+  range: 30
+  damage: 0
+  AreaOfEffect: 5
+  damageCenter: 3
+  damageMiddle: 2
+  damageFar: 1

@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour
     public TextMeshProUGUI Ability_1Timer;
     public Transform arrowSpawn;
 
+    //public PlayerAbilities[] allOfPlayerAbilities;
     private Animator animator;
     private bool canShoot = true;
     private bool canShootAbility1 = true;
