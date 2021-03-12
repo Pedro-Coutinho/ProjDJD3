@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class Shoot : MonoBehaviour
 {
     public Player playerData;
     
     public GameObject BasicAtack;
+    public TextMeshProUGUI BasicAtackTimer;
     public GameObject Ability_1;
+    public TextMeshProUGUI Ability_1Timer;
     public Transform arrowSpawn;
 
     private Animator animator;
@@ -93,12 +97,32 @@ public class Shoot : MonoBehaviour
     // Courotine to ability coolDown
     IEnumerator Ability1Time()
     {
-        yield return new WaitForSeconds(2);
+        // Displays Cooldown time for ability 1.
+        float duration = 4;
+        float remainingTime = duration;
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            Ability_1Timer.text = (Math.Round(remainingTime, 1)).ToString();
+            yield return null;
+        }
+        
+        
+        Ability_1Timer.text = string.Empty;
         canShootAbility1 = true;
     }
     IEnumerator ShootTime()
     {
-        yield return new WaitForSeconds(1);
+        // Displays cooldown time for Basic atack. 
+        float duration = 1;
+        float remainingTime = duration;
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            BasicAtackTimer.text = (Math.Round(remainingTime, 1)).ToString();
+            yield return null;
+        }
+        BasicAtackTimer.text = string.Empty;
         canShoot = true;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used in the Goblin partical atack prefab
 public class GoblinAtackCollision : MonoBehaviour
 {
     public PlayerStats playerStats;
@@ -20,6 +21,8 @@ public class GoblinAtackCollision : MonoBehaviour
         //Debug.Log(e.HitPoint); //a collision coordinates in world space
         //Debug.Log(e.HitGameObject.name); //a collided gameobject
         //Debug.Log(e.HitCollider.name); //a collided collider :)
+
+        // If it hits player takes damage
         if(e.HitGameObject.name == "Player")
             playerStats.currentHeath -= 1;
     }

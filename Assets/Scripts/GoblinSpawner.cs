@@ -5,6 +5,8 @@ using UnityEngine;
 public class GoblinSpawner : MonoBehaviour
 {
     public GameObject goblinSpawner;
+
+    // Activates the spawner when the player enters the collider
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

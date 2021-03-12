@@ -25,13 +25,14 @@ public class EnemyShoot : MonoBehaviour
     {
         enemy = gameObject.transform.GetComponent<Enemy>();
     }
+
     // Update is called once per frame
     void Update()
     {
         float distanceToPlayer = (player.position - gameObject.transform.position).magnitude;
         if (distanceToPlayer < enemyType.rangeToShoot && enemy.isDead == false)
         {
-            
+            // Normal shoot
             if (canShoot && enemyType.areaOfEffect == false)
             {
                 animator.SetBool("Atack", true);
@@ -44,6 +45,7 @@ public class EnemyShoot : MonoBehaviour
                 float rnd = Random.Range(enemyType.shootTimeCicle - 0.5f, enemyType.shootTimeCicle + 0.5f);
                 StartCoroutine(waitCicle(rnd));
             }
+            // Area of effect shoot
             else if (canShoot && enemyType.areaOfEffect == true)
             {
                 animator.SetTrigger("Atack");
