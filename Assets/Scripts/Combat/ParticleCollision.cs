@@ -23,7 +23,7 @@ public class ParticleCollision : MonoBehaviour
 
         // If hits enemy, takes damage
         if (e.HitGameObject.transform.tag == "Enemy")
-            e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 0;
+            e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
     }
 
     // Destroys this after some time

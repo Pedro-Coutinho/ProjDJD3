@@ -115,7 +115,7 @@ public class Shoot : MonoBehaviour
     IEnumerator ShootTime()
     {
         // Displays cooldown time for Basic atack. 
-        float duration = 0.1f;
+        float duration = 1f;
         float remainingTime = duration;
         while (remainingTime > 0)
         {
