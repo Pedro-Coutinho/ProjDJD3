@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4108846959145400}
   - component: {fileID: 108876201580326894}
   - component: {fileID: 114978581578949764}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4660060631330338}
   - component: {fileID: 114548108279133696}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Basic_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   LimitMaxDistance: 0
   MaxDistnace: -1
   Mass: 1
-  Speed: 25
+  Speed: 60
   AirDrag: 0.1
   UseGravity: 0
 --- !u!1 &1129926050577732
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 4381606242719204}
   - component: {fileID: 198876780323751062}
   - component: {fileID: 199084829123582318}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4970,7 +4970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4096808216952306}
   - component: {fileID: 114287060789888418}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +5039,7 @@ GameObject:
   - component: {fileID: 198132722974161158}
   - component: {fileID: 199162144932179478}
   - component: {fileID: 114763637877728646}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

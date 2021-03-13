@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4396683215884840}
   - component: {fileID: 108227601110614092}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4603550812545150}
   - component: {fileID: 198915070601933226}
   - component: {fileID: 199634831349173258}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4665,7 +4665,7 @@ GameObject:
   - component: {fileID: 4803592375691064}
   - component: {fileID: 198504854169033056}
   - component: {fileID: 199767159089020836}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9226,7 +9226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805788057881982}
   - component: {fileID: 114503623341167234}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9290,8 +9290,8 @@ GameObject:
   - component: {fileID: 4709693737692316}
   - component: {fileID: 114595567569386552}
   - component: {fileID: 429782222291199343}
-  m_Layer: 8
-  m_Name: Effect1
+  m_Layer: 13
+  m_Name: Basic_1
   m_TagString: PlayerAtack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

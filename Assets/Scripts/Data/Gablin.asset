@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50ebf7a75e39d4f4893f473f7af6e56f, type: 3}
-  m_Name: EnemyType1
+  m_Name: Gablin
   m_EditorClassIdentifier: 
   health: 3
   rangeToShoot: 30

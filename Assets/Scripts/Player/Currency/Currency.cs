@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Currency : MonoBehaviour
 {
+    public int distanceToCollect = 5;
     private GameObject player;
 
     private Vector3 playerDirection;
@@ -19,7 +20,7 @@ public class Currency : MonoBehaviour
     {
         float distanceToPlayer = (player.transform.position - gameObject.transform.position).magnitude;
 
-        if (distanceToPlayer <= 10)
+        if (distanceToPlayer <= distanceToCollect)
         {
             float moveSpeed = 20.0f;
 
