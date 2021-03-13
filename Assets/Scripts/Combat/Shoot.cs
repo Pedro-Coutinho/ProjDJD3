@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
     public Player playerData;
-    
+
+    public Sprite goldFrame;
+    public Sprite silverFrame;
+
     public GameObject BasicAtack;
     public TextMeshProUGUI BasicAtackTimer;
+    public Image basicAtackFrame;
+
     public GameObject Ability_1;
     public TextMeshProUGUI Ability_1Timer;
+    public Image ability_1Frame;
     public Transform arrowSpawn;
 
     //public PlayerAbilities[] allOfPlayerAbilities;
@@ -43,6 +50,9 @@ public class Shoot : MonoBehaviour
             canShoot = false;
             Instantiate(BasicAtack, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
             StartCoroutine(ShootTime());
+
+            // Set Frame
+            basicAtackFrame.sprite = silverFrame;
         }
 
     }
@@ -65,6 +75,9 @@ public class Shoot : MonoBehaviour
 
             // Courotine to damage player after x time
             StartCoroutine(MeteorDamage(playerData.currentEnemyPosition));
+
+            // Set Frame
+            ability_1Frame.sprite = silverFrame;
         }
     }
 
@@ -111,6 +124,9 @@ public class Shoot : MonoBehaviour
         
         Ability_1Timer.text = string.Empty;
         canShootAbility1 = true;
+
+        // Set Frame
+        ability_1Frame.sprite = goldFrame;
     }
     IEnumerator ShootTime()
     {
@@ -125,5 +141,7 @@ public class Shoot : MonoBehaviour
         }
         BasicAtackTimer.text = string.Empty;
         canShoot = true;
+        // Set Frame
+        basicAtackFrame.sprite = goldFrame;
     }
 }
