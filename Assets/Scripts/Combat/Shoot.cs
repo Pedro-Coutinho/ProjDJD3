@@ -22,6 +22,8 @@ public class Shoot : MonoBehaviour
     public Image ability_1Frame;
     public Transform arrowSpawn;
 
+    public GameObject PopUpDmg;
+
     //public PlayerAbilities[] allOfPlayerAbilities;
     private Animator animator;
     private bool canShoot = true;
@@ -149,14 +151,20 @@ public class Shoot : MonoBehaviour
             if (dist < 1)
             {
                 enemie.transform.GetComponent<Enemy>().currentHealth -= 3;
+                GameObject pText = Instantiate(PopUpDmg, enemie.transform.position, Quaternion.identity);
+                pText.GetComponent<TextMeshPro>().text = 3.ToString();
             }
             else if (dist < 4)
             {
                 enemie.transform.GetComponent<Enemy>().currentHealth -= 2;
+                GameObject pText = Instantiate(PopUpDmg, enemie.transform.position, Quaternion.identity);
+                pText.GetComponent<TextMeshPro>().text = 2.ToString();
             }
             else if (dist < 5)
             {
                 enemie.transform.GetComponent<Enemy>().currentHealth -= 1;
+                GameObject pText = Instantiate(PopUpDmg, enemie.transform.position, Quaternion.identity);
+                pText.GetComponent<TextMeshPro>().text = 1.ToString();
             }
         }
 

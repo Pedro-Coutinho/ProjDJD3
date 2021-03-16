@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.UI;
 public class ParticleCollision : MonoBehaviour
 {
+    public GameObject PopUpDmg;
     void Start()
     {
         // Partical collisions
@@ -23,7 +25,13 @@ public class ParticleCollision : MonoBehaviour
 
         // If hits enemy, takes damage
         if (e.HitGameObject.transform.tag == "Enemy")
+        {
+            GameObject pText = Instantiate(PopUpDmg, e.HitPoint, Quaternion.identity);
+            pText.GetComponent<TextMeshPro>().text = 1.ToString();
+            
             e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
+        }
+            
     }
 
     // Destroys this after some time

@@ -4917,6 +4917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4bfac23c9321f4790a16a19dc65c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopUpDmg: {fileID: 9075310012111163217, guid: 18fb2be996937ad44a047b2932e5c129, type: 3}
 --- !u!1 &173436
 GameObject:
   m_ObjectHideFlags: 0
