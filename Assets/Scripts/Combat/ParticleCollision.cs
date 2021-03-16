@@ -28,7 +28,7 @@ public class ParticleCollision : MonoBehaviour
         {
             GameObject pText = Instantiate(PopUpDmg, e.HitPoint, Quaternion.identity);
             pText.GetComponent<TextMeshPro>().text = 1.ToString();
-            
+
             e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
         }
             
