@@ -26,10 +26,26 @@ public class ParticleCollision : MonoBehaviour
         // If hits enemy, takes damage
         if (e.HitGameObject.transform.tag == "Enemy")
         {
-            GameObject pText = Instantiate(PopUpDmg, e.HitPoint, Quaternion.identity);
-            pText.GetComponent<TextMeshPro>().text = 1.ToString();
+            // NEEDS WORK
+            int critChance = Random.Range(0, 100);
+            if (critChance < 20)
+            {
+                GameObject pText = Instantiate(PopUpDmg, e.HitPoint + new Vector3(0, 1, 0), Quaternion.identity);
+                pText.GetComponent<TextMeshPro>().text = 2.ToString();
+                pText.GetComponent<TextMeshPro>().color = new Color(255, 239, 0, 255);
 
-            e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
+                e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 2;
+                Debug.Log("Entrou");
+            }
+            else
+            {
+                GameObject pText = Instantiate(PopUpDmg, e.HitPoint + new Vector3(0, 1, 0), Quaternion.identity);
+                pText.GetComponent<TextMeshPro>().text = 1.ToString();
+                pText.GetComponent<TextMeshPro>().color = new Color(255, 255, 255, 255);
+
+                e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
+            }
+            
         }
             
     }
