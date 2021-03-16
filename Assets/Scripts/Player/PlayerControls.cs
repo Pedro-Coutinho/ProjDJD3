@@ -89,6 +89,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SlowTime"",
+                    ""type"": ""Button"",
+                    ""id"": ""c552861e-8b19-445f-a3a0-b07f51c18d5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -190,6 +198,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Abilitiy1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8efee540-9e17-4b1e-a104-f9e1e4c7a4d2"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlowTime"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -207,6 +226,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_SwitchEnemy = m_Gameplay.FindAction("SwitchEnemy", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Abilitiy1 = m_Gameplay.FindAction("Abilitiy1", throwIfNotFound: true);
+        m_Gameplay_SlowTime = m_Gameplay.FindAction("SlowTime", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -265,6 +285,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_SwitchEnemy;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Abilitiy1;
+    private readonly InputAction m_Gameplay_SlowTime;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -278,6 +299,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @SwitchEnemy => m_Wrapper.m_Gameplay_SwitchEnemy;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Abilitiy1 => m_Wrapper.m_Gameplay_Abilitiy1;
+        public InputAction @SlowTime => m_Wrapper.m_Gameplay_SlowTime;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -314,6 +336,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Abilitiy1.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
                 @Abilitiy1.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
                 @Abilitiy1.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbilitiy1;
+                @SlowTime.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlowTime;
+                @SlowTime.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlowTime;
+                @SlowTime.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlowTime;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -345,6 +370,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Abilitiy1.started += instance.OnAbilitiy1;
                 @Abilitiy1.performed += instance.OnAbilitiy1;
                 @Abilitiy1.canceled += instance.OnAbilitiy1;
+                @SlowTime.started += instance.OnSlowTime;
+                @SlowTime.performed += instance.OnSlowTime;
+                @SlowTime.canceled += instance.OnSlowTime;
             }
         }
     }
@@ -360,5 +388,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSwitchEnemy(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnAbilitiy1(InputAction.CallbackContext context);
+        void OnSlowTime(InputAction.CallbackContext context);
     }
 }

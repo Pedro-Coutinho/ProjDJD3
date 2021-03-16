@@ -97,7 +97,7 @@ public class ThirdPersonMovment : MonoBehaviour
     IEnumerator EnableInputsAfterRoll()
     {
         Debug.Log(moveDir);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1 * Time.unscaledDeltaTime);
         playerData.speed = playerData.speed / 2;
         inputs.Gameplay.Enable();
         StopMove();
@@ -125,7 +125,7 @@ public class ThirdPersonMovment : MonoBehaviour
 
     private void UpdateMov()
     {
-        controler.Move((moveDir.normalized * currentSpeed * Time.deltaTime) + directionY * Time.deltaTime);
+        controler.Move((moveDir.normalized * currentSpeed * Time.unscaledDeltaTime) + directionY * Time.unscaledDeltaTime);
     }
 
     private void StopMove()
@@ -170,10 +170,10 @@ public class ThirdPersonMovment : MonoBehaviour
         {
             if (playerData.currentGravity > playerData.maxGravity)
             {
-                playerData.currentGravity -= playerData.gravity * Time.deltaTime;
+                playerData.currentGravity -= playerData.gravity * Time.unscaledDeltaTime;
             }
 
-            directionY += gravityDirection * -playerData.currentGravity * Time.deltaTime;
+            directionY += gravityDirection * -playerData.currentGravity * Time.unscaledDeltaTime;
         }
         
     }

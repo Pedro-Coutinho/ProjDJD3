@@ -52,7 +52,7 @@ public class EnemyShoot : MonoBehaviour
                 ring = Instantiate(areaOfEffectWarning, player.position, Quaternion.identity);
                 StartCoroutine(AreaOfEffectAtack(player.position));
                 canShoot = false;
-                StartCoroutine(waitCicle(3));
+                StartCoroutine(waitCicle(11));
             }
             
         }
@@ -63,11 +63,10 @@ public class EnemyShoot : MonoBehaviour
     }
     IEnumerator AreaOfEffectAtack(Vector3 ringPos)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         float dist = (player.position - ringPos).magnitude;
-        if (dist < 3)
+        if (dist < 5)
         {
-            Debug.Log("Entrou");
             playerStats.currentHeath -= 1;
         }
         Destroy(ring);

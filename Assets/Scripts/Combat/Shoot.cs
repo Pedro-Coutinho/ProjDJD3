@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Shoot : MonoBehaviour
 {
     public Player playerData;
+    public Slider timeBar;
 
     public Sprite goldFrame;
     public Sprite silverFrame;
@@ -31,12 +32,65 @@ public class Shoot : MonoBehaviour
 
     private GameObject[] Enemies;
 
+    private bool timedSlowed = false;
+    private bool canSlowTime = true;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         playerData.playerControls.Gameplay.Shoot.performed += ctx => BasicAbility();
         playerData.playerControls.Gameplay.Abilitiy1.performed += ctx => Ability1();
+        playerData.playerControls.Gameplay.SlowTime.performed += ctx => SlowTime();
+    }
+    private void SlowTime()
+    {
+        
+        if (canSlowTime)
+        {
+            Time.timeScale = 0.1f;
+            timedSlowed = true;
+            canSlowTime = false;
+            StartCoroutine(SlowTimeUse());
+        }
+    }
+
+    private IEnumerator SlowTimeUse()
+    {
+        // Displays Cooldown time for ability 1.
+        float duration = 2;
+        float remainingTime = duration;
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.unscaledDeltaTime;
+            if (timedSlowed)
+                timeBar.value = remainingTime / 2;
+            else
+                break;
+            yield return null;
+        }
+
+        Time.timeScale = 1; 
+        timedSlowed = false;
+        
+
+        StartCoroutine(SlowTimeRecharge());
+    }
+    private IEnumerator SlowTimeRecharge()
+    {
+        // Displays Cooldown time for ability 1.
+        float duration = 10;
+        float remainingTime = duration;
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.unscaledDeltaTime;
+            if (!timedSlowed)
+                timeBar.value = (10 - remainingTime) / 10;
+            else
+                break;
+            yield return null;
+        }
+        canSlowTime = true;
     }
 
     // Spawns basic player ability

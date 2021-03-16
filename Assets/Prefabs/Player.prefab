@@ -1867,8 +1867,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 1ca381d64e7caf142925c83d8d2da820, type: 2}
+  timeBar: {fileID: 0}
+  goldFrame: {fileID: 0}
+  silverFrame: {fileID: 0}
   BasicAtack: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
+  BasicAtackTimer: {fileID: 0}
+  basicAtackFrame: {fileID: 0}
   Ability_1: {fileID: 1908032145150028, guid: 3fc0a26d09ca89a4f8ef0e417730ffd2, type: 3}
+  Ability_1Timer: {fileID: 0}
+  ability_1Frame: {fileID: 0}
   arrowSpawn: {fileID: 1151662453455909684}
 --- !u!95 &6741404195965506829
 Animator:
@@ -1882,7 +1889,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bdecd0f0b36dd2c46827f34114836113, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

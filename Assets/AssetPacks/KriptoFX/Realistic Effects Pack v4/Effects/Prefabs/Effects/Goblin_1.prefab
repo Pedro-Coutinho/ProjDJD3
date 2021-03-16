@@ -4902,7 +4902,7 @@ MonoBehaviour:
   LimitMaxDistance: 0
   MaxDistnace: -1
   Mass: 1
-  Speed: 20
+  Speed: 30
   AirDrag: 0.01
   UseGravity: 0
 --- !u!114 &-6243060327965259012
