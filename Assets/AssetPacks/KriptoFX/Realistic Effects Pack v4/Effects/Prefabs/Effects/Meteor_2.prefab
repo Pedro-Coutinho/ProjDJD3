@@ -11843,7 +11843,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 53f35e3d037f01d4ca84fc864e6280b3, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16029,34 +16028,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f409696d9de5c408318c995259242f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceRadius: 12
-  ForceMultiplier: 15
+  ForceRadius: 10
+  ForceMultiplier: 2
   ForceCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.79999995
-      inSlope: 0.015678175
-      outSlope: 0.015678175
-      tangentMode: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.25282142
-      outSlope: 0.25282142
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   ForceMode: 0
-  GraphTimeMultiplier: 2.2
+  GraphTimeMultiplier: 1
   GraphIntensityMultiplier: 1
   IsLoop: 0
   DestoryDistance: -1
@@ -17889,7 +17888,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 100
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -22357,7 +22356,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 21df5ec54c3ca1946bbb59bbb8da0dd1, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24960,7 +24958,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 33.146545, z: 7.29e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -34982,7 +34980,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 21df5ec54c3ca1946bbb59bbb8da0dd1, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

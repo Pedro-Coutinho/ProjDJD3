@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be2ace867b5d03e40ad6a706699ad5a4, type: 3}
-  m_Name: Basic1
+  m_Name: MainAbility
   m_EditorClassIdentifier: 
   abilityPrefab: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
   level: 0

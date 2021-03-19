@@ -52,7 +52,7 @@ public class EnemyShoot : MonoBehaviour
                 ring = Instantiate(areaOfEffectWarning, player.position, Quaternion.identity);
                 StartCoroutine(AreaOfEffectAtack(player.position));
                 canShoot = false;
-                StartCoroutine(waitCicle(11));
+                StartCoroutine(waitCicle(4));
             }
             
         }
@@ -63,9 +63,9 @@ public class EnemyShoot : MonoBehaviour
     }
     IEnumerator AreaOfEffectAtack(Vector3 ringPos)
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         float dist = (player.position - ringPos).magnitude;
-        if (dist < 5)
+        if (dist < 2.5f)
         {
             playerStats.currentHeath -= 1;
         }

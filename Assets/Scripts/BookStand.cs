@@ -21,6 +21,7 @@ public class BookStand : MonoBehaviour
     {
         if (playerInZone && !interfaceActive)
         {
+            
             bookCam.SetActive(true);
             interfaceActive = true;
         }

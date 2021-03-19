@@ -13,4 +13,7 @@ public class PlayerStats : ScriptableObject
 
     [HideInInspector]
     public float currentHeath;
+
+    public PlayerAbilities[] posessedAbilities;
+    public PlayerAbilities[] equipedAbilities;
 }
