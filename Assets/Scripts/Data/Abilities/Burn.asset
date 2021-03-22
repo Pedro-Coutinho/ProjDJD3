@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be2ace867b5d03e40ad6a706699ad5a4, type: 3}
-  m_Name: MainAbility
+  m_Name: Burn
   m_EditorClassIdentifier: 
-  type: 0
-  abilityPrefab: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
+  type: 2
+  abilityPrefab: {fileID: 0}
   icon: {fileID: 0}
   level: 0
-  cooldowTime: 1
-  range: 30
-  damage: 1
+  cooldowTime: 0
+  range: 0
+  damage: 0
   AreaOfEffect: 0
   damageCenter: 0
   damageMiddle: 0
   damageFar: 0
-  totalTime: 0
-  timeIntervalForDamge: 0
+  totalTime: 5
+  timeIntervalForDamge: 0.5

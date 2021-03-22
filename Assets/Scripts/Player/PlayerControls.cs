@@ -105,6 +105,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ability2"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd262773-96c0-48af-8250-87ee30eced65"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -228,6 +236,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81b3df00-b4f2-4ad3-b28c-0b7f96054133"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -247,6 +266,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_Abilitiy1 = m_Gameplay.FindAction("Abilitiy1", throwIfNotFound: true);
         m_Gameplay_SlowTime = m_Gameplay.FindAction("SlowTime", throwIfNotFound: true);
         m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
+        m_Gameplay_Ability2 = m_Gameplay.FindAction("Ability2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -307,6 +327,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Abilitiy1;
     private readonly InputAction m_Gameplay_SlowTime;
     private readonly InputAction m_Gameplay_Menu;
+    private readonly InputAction m_Gameplay_Ability2;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -322,6 +343,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Abilitiy1 => m_Wrapper.m_Gameplay_Abilitiy1;
         public InputAction @SlowTime => m_Wrapper.m_Gameplay_SlowTime;
         public InputAction @Menu => m_Wrapper.m_Gameplay_Menu;
+        public InputAction @Ability2 => m_Wrapper.m_Gameplay_Ability2;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -364,6 +386,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Menu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMenu;
                 @Menu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMenu;
                 @Menu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMenu;
+                @Ability2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2;
+                @Ability2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2;
+                @Ability2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAbility2;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -401,6 +426,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Menu.started += instance.OnMenu;
                 @Menu.performed += instance.OnMenu;
                 @Menu.canceled += instance.OnMenu;
+                @Ability2.started += instance.OnAbility2;
+                @Ability2.performed += instance.OnAbility2;
+                @Ability2.canceled += instance.OnAbility2;
             }
         }
     }
@@ -418,5 +446,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnAbilitiy1(InputAction.CallbackContext context);
         void OnSlowTime(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
+        void OnAbility2(InputAction.CallbackContext context);
     }
 }

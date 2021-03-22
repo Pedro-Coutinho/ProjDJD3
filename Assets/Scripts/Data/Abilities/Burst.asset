@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be2ace867b5d03e40ad6a706699ad5a4, type: 3}
-  m_Name: MainAbility
+  m_Name: Burst
   m_EditorClassIdentifier: 
   type: 0
-  abilityPrefab: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
+  abilityPrefab: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6, type: 3}
   icon: {fileID: 0}
   level: 0
-  cooldowTime: 1
+  cooldowTime: 10
   range: 30
-  damage: 1
+  damage: 5
   AreaOfEffect: 0
   damageCenter: 0
   damageMiddle: 0
