@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.InputSystem;
 
 public class UiHealth : MonoBehaviour
 {
@@ -44,7 +45,7 @@ public class UiHealth : MonoBehaviour
             healthBar.value = 1 - (playerstats.playerHealth - playerstats.currentHeath) / playerstats.playerHealth;
 
             StartCoroutine(ShakeCam());
-
+            Gamepad.current.SetMotorSpeeds(0.3f, 0.2f);
             currentHealth = playerstats.currentHeath;
             hit = false;
         }
@@ -57,7 +58,7 @@ public class UiHealth : MonoBehaviour
         
         float duration = 0.5f;
         float remainingTime = duration;
-
+        
         while (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
@@ -68,5 +69,6 @@ public class UiHealth : MonoBehaviour
             AimCam2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = remainingTime * 6;
             yield return null;
         }
+        Gamepad.current.SetMotorSpeeds(0, 0);
     }
 }
