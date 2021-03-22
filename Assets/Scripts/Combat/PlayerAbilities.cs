@@ -12,10 +12,11 @@ public class PlayerAbilities : ScriptableObject
     public abilityType type;
 
     //  Display always
+    public string abilityName;
     public GameObject abilityPrefab;
     public GameObject icon; // May need a difrent icon 
     public int level = 0;
-    public int cooldowTime = 0;
+    public float cooldowTime = 0;
     public int range = 0;
 
     // Normal ability variables 
@@ -43,9 +44,10 @@ public class AbilitieEditor : Editor
         PlayerAbilities playerAbilities = (PlayerAbilities)target;
 
         // Display always
+        playerAbilities.abilityName = (string)EditorGUILayout.TextField("AbilityName", playerAbilities.abilityName);
         playerAbilities.abilityPrefab = (GameObject)EditorGUILayout.ObjectField("Ability Effect", playerAbilities.abilityPrefab, typeof(Object), true);
         playerAbilities.icon = (GameObject)EditorGUILayout.ObjectField("Ability Icon", playerAbilities.icon, typeof(Object), true);
-        playerAbilities.cooldowTime = (int)EditorGUILayout.IntField("CooldownTime", playerAbilities.cooldowTime);
+        playerAbilities.cooldowTime = (float)EditorGUILayout.FloatField("CooldownTime", playerAbilities.cooldowTime);
         playerAbilities.level = (int)EditorGUILayout.IntField("Level", playerAbilities.level);
 
         // Display DropDown

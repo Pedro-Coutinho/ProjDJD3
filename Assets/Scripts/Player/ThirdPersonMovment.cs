@@ -96,7 +96,6 @@ public class ThirdPersonMovment : MonoBehaviour
     }
     IEnumerator EnableInputsAfterRoll()
     {
-        Debug.Log(moveDir);
         yield return new WaitForSeconds(1 * Time.unscaledDeltaTime);
         playerData.speed = playerData.speed / 2;
         inputs.Gameplay.Enable();

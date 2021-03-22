@@ -45,7 +45,10 @@ public class UiHealth : MonoBehaviour
             healthBar.value = 1 - (playerstats.playerHealth - playerstats.currentHeath) / playerstats.playerHealth;
 
             StartCoroutine(ShakeCam());
+
+            //Start gamepad shake
             Gamepad.current.SetMotorSpeeds(0.5f, 0.3f);
+
             currentHealth = playerstats.currentHeath;
             hit = false;
         }
@@ -69,6 +72,7 @@ public class UiHealth : MonoBehaviour
             AimCam2.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = remainingTime * 6;
             yield return null;
         }
+        // Stop gamepad shake
         Gamepad.current.SetMotorSpeeds(0, 0);
     }
 }

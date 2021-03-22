@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class CastAbilities : MonoBehaviour
 {
     public Player playerData;
     public PlayerStats playerStats;
-    
 
     public Sprite goldFrame;
     public Sprite silverFrame;
@@ -18,9 +18,12 @@ public class CastAbilities : MonoBehaviour
     public TextMeshProUGUI BasicAtackTimer;
     public Image basicAtackFrame;
 
-    public GameObject Ability_1;
     public TextMeshProUGUI Ability_1Timer;
     public Image ability_1Frame;
+
+    public TextMeshProUGUI Ability_2Timer;
+    public Image ability_2Frame;
+
     public Transform arrowSpawn;
 
     public GameObject PopUpDmg;
@@ -29,6 +32,7 @@ public class CastAbilities : MonoBehaviour
     private Animator animator;
     private bool canShoot = true;
     private bool canShootAbility1 = true;
+    private bool canShootAbility2 = true;
 
     private Vector3 enemyDirection;
     private Vector3 enemyPosition;
@@ -41,14 +45,14 @@ public class CastAbilities : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        playerData.playerControls.Gameplay.Shoot.performed += ctx => BasicAbility();
+        playerData.playerControls.Gameplay.Shoot.performed += ctx => CastBasicAbility(0);
         playerData.playerControls.Gameplay.Abilitiy1.performed += ctx => CastAbility(1);
         playerData.playerControls.Gameplay.Ability2.performed += ctx => CastAbility(2);
     }
     
 
     // Spawns basic player ability
-    private void BasicAbility()
+    private void CastBasicAbility(int Ab)
     {
         if (canShoot && playerData.enemylock)
         {
@@ -57,7 +61,7 @@ public class CastAbilities : MonoBehaviour
             animator.SetTrigger("Shoot");
             canShoot = false;
             Instantiate(BasicAtack, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
-            StartCoroutine(ShootTime());
+            StartCoroutine(ShootTime(Ab, 1));
 
             // Set Frame
             basicAtackFrame.sprite = silverFrame;
@@ -68,32 +72,108 @@ public class CastAbilities : MonoBehaviour
     // Spawns ability 1 (Area of Effect)
     private void CastAbility(int Ab)
     {
+        if (Ab == 1)
+        {
+            if (playerStats.equipedLeftAbility.abilityName == "Meteor" )
+                CastMeteorAbility(Ab);
+            if (playerStats.equipedLeftAbility.abilityName == "Burst")
+                CastBurstAbility(Ab);
+            if (playerStats.equipedLeftAbility.abilityName == "Burn")
+                CastBurn(Ab);
+        }
 
-        MeteorAbility();
+
+        if (Ab == 2)
+        {
+            if (playerStats.equipedRightAbility.abilityName == "Meteor")
+                CastMeteorAbility(Ab);
+            if (playerStats.equipedRightAbility.abilityName == "Burst")
+                CastBurstAbility(Ab);
+            if (playerStats.equipedRightAbility.abilityName == "Burn")
+                CastBurn(Ab);
+        }
+        
+    }
+    private void CastBurn(int Ab)
+    {
+
     }
 
-    private void MeteorAbility()
+    // Burst ability shot
+    private void CastBurstAbility(int Ab)
     {
-        if (canShootAbility1 && playerData.enemylock)
+        if (playerData.enemylock)
         {
             // Calculates Enemy direction
             enemyPosition = playerData.currentEnemyPosition;
             enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
 
             animator.SetTrigger("Shoot");
-            canShootAbility1 = false;
-            Instantiate(Ability_1, playerData.currentEnemyPosition + new Vector3(0, -1, 0), Quaternion.LookRotation(enemyDirection));
+            if (Ab == 1 && canShootAbility1)
+            {
+                canShootAbility1 = false;
+                Instantiate(playerStats.equipedLeftAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
 
-            // Courotine to ability coolDown
-            StartCoroutine(Ability1Time());
+                // Courotine to ability coolDown
+                StartCoroutine(ShootTime(Ab, playerStats.equipedLeftAbility.cooldowTime));
 
-            // Courotine to damage player after x time
-            StartCoroutine(MeteorDamage(playerData.currentEnemyPosition));
+                // Set Frame
+                ability_1Frame.sprite = silverFrame;
+            }
+            else if (Ab == 2 && canShootAbility2)
+            {
+                canShootAbility2 = false;
+                Instantiate(playerStats.equipedRightAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
 
-            // Set Frame
-            ability_1Frame.sprite = silverFrame;
+                // Courotine to ability coolDown
+                StartCoroutine(ShootTime(Ab, playerStats.equipedRightAbility.cooldowTime));
+
+                // Set Frame
+                ability_2Frame.sprite = silverFrame;
+            }
+            
+        }
+
+    }
+    
+
+    // Meteor ability shoot
+    private void CastMeteorAbility(int Ab)
+    {
+        if (playerData.enemylock)
+        {
+            // Calculates Enemy direction
+            enemyPosition = playerData.currentEnemyPosition;
+            enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
+
+            animator.SetTrigger("Shoot");
+            if (Ab == 1 && canShootAbility1)
+            {
+                canShootAbility1 = false;
+                Instantiate(playerStats.equipedLeftAbility.abilityPrefab, playerData.currentEnemyPosition + new Vector3(0, -1, 0), Quaternion.LookRotation(enemyDirection));
+                // Courotine to ability coolDown
+                StartCoroutine(ShootTime(Ab, playerStats.equipedLeftAbility.cooldowTime));
+                // Set Frame
+                ability_1Frame.sprite = silverFrame;
+                // Courotine to damage player after x time
+                StartCoroutine(MeteorDamage(playerData.currentEnemyPosition));
+            }
+            else if (Ab == 2 && canShootAbility2)
+            {
+                canShootAbility2 = false;
+                Instantiate(playerStats.equipedRightAbility.abilityPrefab, playerData.currentEnemyPosition + new Vector3(0, -1, 0), Quaternion.LookRotation(enemyDirection));
+                // Courotine to ability coolDown
+                StartCoroutine(ShootTime(Ab, playerStats.equipedRightAbility.cooldowTime));
+                // Set Frame
+                ability_2Frame.sprite = silverFrame;
+                // Courotine to damage player after x time
+                StartCoroutine(MeteorDamage(playerData.currentEnemyPosition));
+            }
+            
         }
     }
+
+
     // Courotine to damage player after x time
     IEnumerator MeteorDamage(Vector3 centerPos)
     {
@@ -127,41 +207,42 @@ public class CastAbilities : MonoBehaviour
 
     }
 
-    // Courotine to ability coolDown
-    IEnumerator Ability1Time()
-    {
-        // Displays Cooldown time for ability 1.
-        float duration = 4;
-        float remainingTime = duration;
 
-        while (remainingTime > 0)
-        {
-            remainingTime -= Time.deltaTime;
-            Ability_1Timer.text = (Math.Round(remainingTime, 1)).ToString();
-            yield return null;
-        }
-        
-        
-        Ability_1Timer.text = string.Empty;
-        canShootAbility1 = true;
-
-        // Set Frame
-        ability_1Frame.sprite = goldFrame;
-    }
-    IEnumerator ShootTime()
+    // Ability cooldown 
+    IEnumerator ShootTime(int Ab, float duration)
     {
-        // Displays cooldown time for Basic atack. 
-        float duration = 1f;
         float remainingTime = duration;
         while (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
-            BasicAtackTimer.text = (Math.Round(remainingTime, 1)).ToString();
+            if  (Ab == 0)
+                BasicAtackTimer.text = (Math.Round(remainingTime, 1)).ToString();
+            else if (Ab == 1)
+                Ability_1Timer.text = (Math.Round(remainingTime, 1)).ToString();
+            else if (Ab == 2)
+                Ability_2Timer.text = (Math.Round(remainingTime, 1)).ToString();
             yield return null;
         }
-        BasicAtackTimer.text = string.Empty;
-        canShoot = true;
+
         // Set Frame
-        basicAtackFrame.sprite = goldFrame;
+        if (Ab == 0)
+        {
+            canShoot = true;
+            BasicAtackTimer.text = string.Empty;
+            basicAtackFrame.sprite = goldFrame;
+        }
+        else if (Ab == 1)
+        {
+            Ability_1Timer.text = string.Empty;
+            canShootAbility1 = true;
+            ability_1Frame.sprite = goldFrame;
+        }
+        else if (Ab == 2)
+        {
+            Ability_2Timer.text = string.Empty;
+            canShootAbility2 = true;
+            ability_2Frame.sprite = goldFrame;
+        }
+
     }
 }
