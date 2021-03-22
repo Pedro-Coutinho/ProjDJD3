@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   startCurrency: 0
-  currentCurrency: 265
+  currentCurrency: 96
   playerHealth: 10
   staminaStat: 3
   staminaColldown: 10
-  currentHeath: 0
+  currentHeath: 10
+  posessedAbilities:
+  - {fileID: 11400000, guid: e74541a4747c1a54c98721a1c27de827, type: 2}
+  - {fileID: 11400000, guid: 8585c78c95f0ea4428ea73dc2c7147b4, type: 2}
+  - {fileID: 11400000, guid: e586cbb32589db547bee08d2c6935ceb, type: 2}
+  equipedLeftAbility: {fileID: 11400000, guid: e586cbb32589db547bee08d2c6935ceb, type: 2}
+  equipedRightAbility: {fileID: 11400000, guid: 8585c78c95f0ea4428ea73dc2c7147b4, type: 2}

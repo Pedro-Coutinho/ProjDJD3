@@ -15,5 +15,6 @@ public class PlayerStats : ScriptableObject
     public float currentHeath;
 
     public PlayerAbilities[] posessedAbilities;
-    public PlayerAbilities[] equipedAbilities;
+    public PlayerAbilities equipedLeftAbility;
+    public PlayerAbilities equipedRightAbility;
 }

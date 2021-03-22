@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8489965891754305744}
   - component: {fileID: 7182740072447529387}
   m_Layer: 5
-  m_Name: MagicEssence
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2029,7 +2029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 33.870117, y: -45.5}
+  m_AnchoredPosition: {x: 33.870117, y: -44.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3550646575686230864
@@ -2257,6 +2257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerstats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
   healthText: {fileID: 8279720601813508417}
+  ThirdPersonCam: {fileID: 0}
+  AimCam1: {fileID: 0}
+  AimCam2: {fileID: 0}
 --- !u!1 &8279720600719410813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,7 +2502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20/20
+  m_text: 10/10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -24,7 +24,10 @@ public class GoblinAtackCollision : MonoBehaviour
 
         // If it hits player takes damage
         if(e.HitGameObject.name == "Player")
+        {
             playerStats.currentHeath -= 1;
+        }
+            
     }
 
     IEnumerator DestroyAffterTime()
