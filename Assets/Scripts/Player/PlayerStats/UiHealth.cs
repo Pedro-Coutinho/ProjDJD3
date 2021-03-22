@@ -45,7 +45,7 @@ public class UiHealth : MonoBehaviour
             healthBar.value = 1 - (playerstats.playerHealth - playerstats.currentHeath) / playerstats.playerHealth;
 
             StartCoroutine(ShakeCam());
-            Gamepad.current.SetMotorSpeeds(0.3f, 0.2f);
+            Gamepad.current.SetMotorSpeeds(0.5f, 0.3f);
             currentHealth = playerstats.currentHeath;
             hit = false;
         }
