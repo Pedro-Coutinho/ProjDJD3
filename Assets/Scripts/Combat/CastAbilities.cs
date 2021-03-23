@@ -107,7 +107,7 @@ public class CastAbilities : MonoBehaviour
             // Calculates Enemy direction
             enemyPosition = playerData.currentEnemyPosition;
             enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
-
+            Debug.Log("Entrou");
             animator.SetTrigger("Shoot");
             if (Ab == 1 && canShootAbility1)
             {

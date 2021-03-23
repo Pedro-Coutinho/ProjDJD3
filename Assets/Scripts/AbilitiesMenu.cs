@@ -16,6 +16,8 @@ public class AbilitiesMenu : MonoBehaviour
         playerData.playerControls.Gameplay.Menu.performed += ctx => OpenCloseMenu();
     }
 
+    
+
     private void OpenCloseMenu()
     {
         if (menuOpend)
