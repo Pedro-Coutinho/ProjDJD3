@@ -181,6 +181,7 @@ public class AimCamera : MonoBehaviour
 
         // Recenter Camera
         CameraNormal.GetComponent<CinemachineFreeLook>().m_XAxis.Value = player.transform.rotation.eulerAngles.y;
+        CameraNormal.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
 
         CameraAim.SetActive(false);
         CameraAim2.SetActive(false);
