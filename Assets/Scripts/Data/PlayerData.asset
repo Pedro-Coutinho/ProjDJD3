@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   enemylock: 0
-  currentEnemyPosition: {x: -19.53, y: 0.8, z: 61.66}
-  speed: 5.5
+  currentEnemyPosition: {x: -15.19, y: 0.8, z: 47.34}
+  speed: 6
   turnSmoothTime: 0.1
   gravity: 15
   currentGravity: -20.010756

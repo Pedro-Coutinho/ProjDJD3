@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 1151662452432725953}
   - component: {fileID: 1151662452432726015}
   - component: {fileID: 1151662452432725952}
+  - component: {fileID: 74681594}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -329,6 +330,23 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &74681594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151662452432725954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 2
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1151662453341283895
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +372,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151662453341283895}
-  m_LocalRotation: {x: 0.12436928, y: 0.008629828, z: -0.001081725, w: 0.99219793}
-  m_LocalPosition: {x: -0.18370914, y: 2.6899998, z: -10.56}
+  m_LocalRotation: {x: 0.0067769904, y: -0.2349764, z: 0.0016383458, w: 0.9719761}
+  m_LocalPosition: {x: 0.95000076, y: 0.029001832, z: -1.8499994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1151662453496127560}
@@ -383,7 +401,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1151662453662423013}
   m_Follow: {fileID: 6252570553818435509}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -468,6 +486,7 @@ GameObject:
   - component: {fileID: 1151662453496127560}
   - component: {fileID: 1151662453496127558}
   - component: {fileID: 1151662453496127559}
+  - component: {fileID: 373074768}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -528,6 +547,23 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+--- !u!114 &373074768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151662453496127561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 2
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1151662453648978196
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,8 +589,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151662453648978196}
-  m_LocalRotation: {x: 0.12436928, y: 0.008629837, z: -0.0010817262, w: 0.99219793}
-  m_LocalPosition: {x: -0.18370914, y: 2.6899998, z: -10.56}
+  m_LocalRotation: {x: 0.1832457, y: -0.23076853, z: 0.044299874, w: 0.9545703}
+  m_LocalPosition: {x: 0.95000076, y: 0.029001832, z: -1.8499994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1151662452432725953}
@@ -582,7 +618,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1151662453662423013}
   m_Follow: {fileID: 6252570553818435509}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 70
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -1874,9 +1910,10 @@ MonoBehaviour:
   BasicAtack: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
   BasicAtackTimer: {fileID: 0}
   basicAtackFrame: {fileID: 0}
-  Ability_1: {fileID: 1908032145150028, guid: 3fc0a26d09ca89a4f8ef0e417730ffd2, type: 3}
   Ability_1Timer: {fileID: 0}
   ability_1Frame: {fileID: 0}
+  Ability_2Timer: {fileID: 0}
+  ability_2Frame: {fileID: 0}
   arrowSpawn: {fileID: 1151662453455909684}
   PopUpDmg: {fileID: 9075310012111163217, guid: 18fb2be996937ad44a047b2932e5c129, type: 3}
 --- !u!95 &6741404195965506829

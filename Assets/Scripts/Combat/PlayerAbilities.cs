@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 
 public enum abilityType { Normal, AreaOfEffect, DamageOverTime, Heal };
@@ -12,9 +13,8 @@ public class PlayerAbilities : ScriptableObject
     public abilityType type;
 
     //  Display always
-    public string abilityName;
     public GameObject abilityPrefab;
-    public GameObject icon; // May need a difrent icon 
+    public Sprite icon; // May need a difrent icon for difrent Levels
     public int level = 0;
     public float cooldowTime = 0;
     public int range = 0;
@@ -44,9 +44,8 @@ public class AbilitieEditor : Editor
         PlayerAbilities playerAbilities = (PlayerAbilities)target;
 
         // Display always
-        playerAbilities.abilityName = (string)EditorGUILayout.TextField("AbilityName", playerAbilities.abilityName);
         playerAbilities.abilityPrefab = (GameObject)EditorGUILayout.ObjectField("Ability Effect", playerAbilities.abilityPrefab, typeof(Object), true);
-        playerAbilities.icon = (GameObject)EditorGUILayout.ObjectField("Ability Icon", playerAbilities.icon, typeof(Object), true);
+        playerAbilities.icon = (Sprite)EditorGUILayout.ObjectField("Ability Icon", playerAbilities.icon, typeof(Sprite), true);
         playerAbilities.cooldowTime = (float)EditorGUILayout.FloatField("CooldownTime", playerAbilities.cooldowTime);
         playerAbilities.level = (int)EditorGUILayout.IntField("Level", playerAbilities.level);
 

@@ -74,22 +74,23 @@ public class CastAbilities : MonoBehaviour
     {
         if (Ab == 1)
         {
-            if (playerStats.equipedLeftAbility.abilityName == "Meteor" )
+            if (playerStats.equipedLeftAbility.name == "Meteor" )
                 CastMeteorAbility(Ab);
-            if (playerStats.equipedLeftAbility.abilityName == "Burst")
+            if (playerStats.equipedLeftAbility.name == "Burst")
                 CastBurstAbility(Ab);
-            if (playerStats.equipedLeftAbility.abilityName == "Burn")
+            if (playerStats.equipedLeftAbility.name == "Burn")
                 CastBurn(Ab);
         }
 
 
         if (Ab == 2)
         {
-            if (playerStats.equipedRightAbility.abilityName == "Meteor")
+            Debug.Log(playerStats.equipedRightAbility.name);
+            if (playerStats.equipedRightAbility.name == "Meteor")
                 CastMeteorAbility(Ab);
-            if (playerStats.equipedRightAbility.abilityName == "Burst")
+            if (playerStats.equipedRightAbility.name == "Burst")
                 CastBurstAbility(Ab);
-            if (playerStats.equipedRightAbility.abilityName == "Burn")
+            if (playerStats.equipedRightAbility.name == "Burn")
                 CastBurn(Ab);
         }
         

@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7287666576064738461}
   - component: {fileID: 3379477612053566259}
   m_Layer: 5
-  m_Name: Ability_1 (14)
+  m_Name: Ability_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,11 +266,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7287666576064738461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &520326544789327794
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -554,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -766,7 +778,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1143606887318174524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: OpenAbilities_2Pannel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1808316526800212952
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -930,7 +954,7 @@ GameObject:
   - component: {fileID: 4892698617192677327}
   - component: {fileID: 1845593604066182583}
   m_Layer: 5
-  m_Name: Ability_1 (8)
+  m_Name: Ability_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,11 +1057,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4892698617192677327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2299519028938170846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1171,7 +1207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1321,7 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1471,7 +1507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1576,7 +1612,7 @@ GameObject:
   - component: {fileID: 9119598346274068743}
   - component: {fileID: 7161326445161998854}
   m_Layer: 5
-  m_Name: Ability_1 (6)
+  m_Name: Ability_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1679,11 +1715,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9119598346274068743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3699068376661263541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1772,7 +1820,7 @@ GameObject:
   - component: {fileID: 8267767114451011440}
   - component: {fileID: 1929134724122198617}
   m_Layer: 5
-  m_Name: Ability_1 (7)
+  m_Name: Ability_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1875,11 +1923,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8267767114451011440}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4290934616977544411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1893,7 +1953,7 @@ GameObject:
   - component: {fileID: 1994671775481709984}
   - component: {fileID: 8246499445540106400}
   m_Layer: 5
-  m_Name: Ability_1 (9)
+  m_Name: Ability_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1996,11 +2056,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1994671775481709984}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5263792701584339724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,7 +2086,7 @@ GameObject:
   - component: {fileID: 4174873125270479476}
   - component: {fileID: 8311067748633186771}
   m_Layer: 5
-  m_Name: Ability_1 (3)
+  m_Name: Ability_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2117,11 +2189,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4174873125270479476}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5266227318155937426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,7 +2219,7 @@ GameObject:
   - component: {fileID: 8373421793299901158}
   - component: {fileID: 6513530165056570871}
   m_Layer: 5
-  m_Name: Ability_1 (16)
+  m_Name: Ability_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,11 +2322,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8373421793299901158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5500339274480747188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2427,7 @@ GameObject:
   - component: {fileID: 537065499462537919}
   - component: {fileID: 8687178305804287708}
   m_Layer: 5
-  m_Name: Ability_1 (12)
+  m_Name: Ability_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2434,11 +2530,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 537065499462537919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5942414963950240675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2527,7 +2635,7 @@ GameObject:
   - component: {fileID: 2749428062863294010}
   - component: {fileID: 9042109809454003261}
   m_Layer: 5
-  m_Name: Ability_1 (4)
+  m_Name: Ability_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2630,11 +2738,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2749428062863294010}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6363098964436902203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,8 +2784,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8704829624448960686}
-  m_RootOrder: 1
+  m_Father: {fileID: 8704829623661972751}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &639587354215026257
 MonoBehaviour:
@@ -2842,7 +2962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2871,12 +2991,12 @@ GameObject:
   - component: {fileID: 2016006115016958552}
   - component: {fileID: 3775003754729704821}
   m_Layer: 5
-  m_Name: Ab1Pannel
+  m_Name: AbilitiesPannel_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5410002488268333474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2999,7 +3119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3029,7 +3149,7 @@ GameObject:
   - component: {fileID: 7711363696793313281}
   - component: {fileID: 6042731172437858494}
   m_Layer: 5
-  m_Name: Ability_1 (5)
+  m_Name: Ability_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3132,11 +3252,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7711363696793313281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7099508036686610869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,7 +3282,7 @@ GameObject:
   - component: {fileID: 7644242674377787125}
   - component: {fileID: 137634803609139547}
   m_Layer: 5
-  m_Name: Ability_1 (11)
+  m_Name: Ability_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3253,11 +3385,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7644242674377787125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7176417294622429544
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,7 +3535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3496,7 +3640,7 @@ GameObject:
   - component: {fileID: 5410347685987979115}
   - component: {fileID: 2270342821601265158}
   m_Layer: 5
-  m_Name: Ability_1 (10)
+  m_Name: Ability_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3599,11 +3743,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5410347685987979115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7914481111791240950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3767,7 +3923,7 @@ GameObject:
   - component: {fileID: 7099088955770410500}
   - component: {fileID: 4993579738902977729}
   m_Layer: 5
-  m_Name: Ability_1 (13)
+  m_Name: Ability_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3870,11 +4026,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7099088955770410500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8401367799583389472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,7 +4101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3962,12 +4130,12 @@ GameObject:
   - component: {fileID: 88566432487948456}
   - component: {fileID: 4683674485449186792}
   m_Layer: 5
-  m_Name: Ab1Pannel (1)
+  m_Name: AbilitiesPannel_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6079276595716881843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4090,7 +4258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33386898, g: 0.33161265, b: 0.33962262, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4318,7 +4486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59031487, g: 0.43454072, b: 0.990566, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4352,7 +4520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8704829623661972751
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4368,6 +4536,7 @@ RectTransform:
   - {fileID: 8704829624083937624}
   - {fileID: 5410002488268333474}
   - {fileID: 6079276595716881843}
+  - {fileID: 8892532158315509212}
   m_Father: {fileID: 8704829624448960686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4633,7 +4802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8704829624083937624}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4856,7 +5025,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8704829624181050643}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: OpenAbilities_1Pannel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8704829624199803757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4964,7 +5145,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 8704829623661972751}
-  - {fileID: 8892532158315509212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5049,6 +5229,29 @@ MonoBehaviour:
   Ui: {fileID: 0}
   AbilityMenu: {fileID: 8704829623661972978}
   playerData: {fileID: 11400000, guid: 1ca381d64e7caf142925c83d8d2da820, type: 2}
+  playerStats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
+  AbilitiesPannel_1: {fileID: 6893040198457546059}
+  AbilitiesPannel_2: {fileID: 8415477975150770541}
+  equipedLeftAbilitieIcon: {fileID: 0}
+  equipedRightAbilitieIcon: {fileID: 0}
+  menuLeftAbilitieIcon: {fileID: 8704829623495402460}
+  menuRightAbilitieIcon: {fileID: 3568578052630334622}
+  AbilitieSlotsPannel1:
+  - {fileID: 7292362714587820624}
+  - {fileID: 8455536923609710519}
+  - {fileID: 520326544789327794}
+  - {fileID: 2370495099527723585}
+  - {fileID: 1808316526800212952}
+  - {fileID: 3699068376661263541}
+  - {fileID: 2585852909500048028}
+  AbilitieSlotsPannel2:
+  - {fileID: 1713500285325121066}
+  - {fileID: 3277070390977186140}
+  - {fileID: 6841906924728334226}
+  - {fileID: 8401367799583389472}
+  - {fileID: 5942414963950240675}
+  - {fileID: 7007197515458073547}
+  - {fileID: 2299519028938170846}
 --- !u!1 &8777179280698906831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5265,7 @@ GameObject:
   - component: {fileID: 1255676786047541925}
   - component: {fileID: 1617551923950488420}
   m_Layer: 5
-  m_Name: Ability_1 (15)
+  m_Name: Ability_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5165,11 +5368,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1255676786047541925}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8704829624448960685}
+        m_TargetAssemblyTypeName: AbilitiesMenu, Assembly-CSharp
+        m_MethodName: SwapAbility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9054383342957931922
 GameObject:
   m_ObjectHideFlags: 0
