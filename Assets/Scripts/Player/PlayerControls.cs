@@ -301,6 +301,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bb276113-50ca-4bbb-b3bd-2fd2eaa1022c"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -369,6 +377,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""NavigationRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4756525-6aa9-4809-b276-3fcf97688e0c"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -397,6 +416,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Menu_NavigationDown = m_Menu.FindAction("NavigationDown", throwIfNotFound: true);
         m_Menu_NavigationLeft = m_Menu.FindAction("NavigationLeft", throwIfNotFound: true);
         m_Menu_NavigationRight = m_Menu.FindAction("NavigationRight", throwIfNotFound: true);
+        m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -573,6 +593,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Menu_NavigationDown;
     private readonly InputAction m_Menu_NavigationLeft;
     private readonly InputAction m_Menu_NavigationRight;
+    private readonly InputAction m_Menu_Navigate;
     public struct MenuActions
     {
         private @PlayerControls m_Wrapper;
@@ -583,6 +604,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @NavigationDown => m_Wrapper.m_Menu_NavigationDown;
         public InputAction @NavigationLeft => m_Wrapper.m_Menu_NavigationLeft;
         public InputAction @NavigationRight => m_Wrapper.m_Menu_NavigationRight;
+        public InputAction @Navigate => m_Wrapper.m_Menu_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -610,6 +632,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @NavigationRight.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
                 @NavigationRight.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
                 @NavigationRight.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
+                @Navigate.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -632,6 +657,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @NavigationRight.started += instance.OnNavigationRight;
                 @NavigationRight.performed += instance.OnNavigationRight;
                 @NavigationRight.canceled += instance.OnNavigationRight;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
             }
         }
     }
@@ -659,5 +687,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigationDown(InputAction.CallbackContext context);
         void OnNavigationLeft(InputAction.CallbackContext context);
         void OnNavigationRight(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
 }

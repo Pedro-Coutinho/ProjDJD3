@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AbilitiesMenu : MonoBehaviour
 {
@@ -9,32 +10,34 @@ public class AbilitiesMenu : MonoBehaviour
     public GameObject AbilityMenu;
     public Player playerData;
 
-    private bool menuOpend = false;
     // Start is called before the first frame update
     void Start()
     {
-        playerData.playerControls.Gameplay.Menu.performed += ctx => OpenCloseMenu();
+        playerData.playerControls.Gameplay.Menu.performed += ctx => OpenMenu();
+        playerData.playerControls.Menu.Exit.performed += ctx => CloseMenu();
     }
 
     
 
-    private void OpenCloseMenu()
+    private void OpenMenu()
     {
-        if (menuOpend)
-        {
-            AimCanvas.SetActive(true);
-            Ui.SetActive(true);
+        // Switch Action Map
+        playerData.playerControls.Gameplay.Disable();
+        playerData.playerControls.Menu.Enable();
 
-            AbilityMenu.SetActive(false);
-            menuOpend = false;
-        }
-        else
-        {
-            AimCanvas.SetActive(false);
-            Ui.SetActive(false);
+        AimCanvas.SetActive(false);
+        Ui.SetActive(false);
+        AbilityMenu.SetActive(true);
+    }
+    private void CloseMenu()
+    {
+        // Switch Action Map
+        playerData.playerControls.Menu.Disable();
+        playerData.playerControls.Gameplay.Enable();
 
-            AbilityMenu.SetActive(true);
-            menuOpend = true;
-        }
+        AimCanvas.SetActive(true);
+        Ui.SetActive(true);
+
+        AbilityMenu.SetActive(false);
     }
 }
