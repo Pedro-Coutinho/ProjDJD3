@@ -72,7 +72,7 @@ public class CastAbilities : MonoBehaviour
     // Spawns ability 1 (Area of Effect)
     private void CastAbility(int Ab)
     {
-        if (Ab == 1)
+        if (Ab == 1 && !playerStats.equipedRightAbility)
         {
             if (playerStats.equipedLeftAbility.name == "Meteor" )
                 CastMeteorAbility(Ab);
@@ -83,9 +83,8 @@ public class CastAbilities : MonoBehaviour
         }
 
 
-        if (Ab == 2)
+        if (Ab == 2 && !playerStats.equipedLeftAbility)
         {
-            Debug.Log(playerStats.equipedRightAbility.name);
             if (playerStats.equipedRightAbility.name == "Meteor")
                 CastMeteorAbility(Ab);
             if (playerStats.equipedRightAbility.name == "Burst")
