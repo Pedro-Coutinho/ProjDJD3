@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   abilityPrefab: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9725fb87facc42a4984598500f76e0fb, type: 3}
   level: 0
   cooldowTime: 0
   range: 0
@@ -25,3 +25,4 @@ MonoBehaviour:
   damageFar: 0
   totalTime: 5
   timeIntervalForDamge: 0.5
+  healValue: 0
