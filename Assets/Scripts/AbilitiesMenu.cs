@@ -14,6 +14,9 @@ public class AbilitiesMenu : MonoBehaviour
     public Player playerData;
     public PlayerStats playerStats;
 
+    //None Ab
+    public PlayerAbilities noneAbility;
+
     // Swap Abilities Pannels
     public GameObject AbilitiesPannel_1;
     public GameObject AbilitiesPannel_2;
@@ -83,10 +86,20 @@ public class AbilitiesMenu : MonoBehaviour
                     menuLeftAbilitieIcon.sprite = pa.icon;
                     menuLeftAbilitieIcon.transform.parent.GetComponent<Button>().Select();
 
+                    // Set colors
+                    menuLeftAbilitieIcon.color = new Color32(255, 255, 255, 255);
+                    equipedLeftAbilitieIcon.color = new Color32(255, 255, 255, 255);
+
                     // Se if it is already in the other slot MAKES AN ERROR IF SPRITE IS NULL
                     if (pa.name == menuRightAbilitieIcon.sprite.name)
                     {
                         menuRightAbilitieIcon.sprite = null;
+                        equipedRightAbilitieIcon.sprite = null;
+                        playerStats.equipedRightAbility = noneAbility;
+
+                        // Set colors to gray
+                        menuRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
+                        equipedRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
                     }
                 }
                 else if (selectedPannel == 2)
@@ -95,10 +108,21 @@ public class AbilitiesMenu : MonoBehaviour
                     equipedRightAbilitieIcon.sprite = pa.icon;
                     menuRightAbilitieIcon.sprite = pa.icon;
                     menuRightAbilitieIcon.transform.parent.GetComponent<Button>().Select();
+
+                    // Set Colors
+                    menuRightAbilitieIcon.color = new Color32(255, 255, 255, 255);
+                    equipedRightAbilitieIcon.color = new Color32(255, 255, 255, 255);
+
                     // Se if it is already in the other slot
                     if (pa.name == menuLeftAbilitieIcon.sprite.name)
                     {
                         menuLeftAbilitieIcon.sprite = null;
+                        equipedLeftAbilitieIcon.sprite = null;
+                        playerStats.equipedLeftAbility = noneAbility;
+
+                        // Set colors to gray
+                        menuLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
+                        equipedLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
                     }
                 }
 
@@ -123,6 +147,7 @@ public class AbilitiesMenu : MonoBehaviour
             if (pa.name != "MainAbility")
             {
                 AbilitieSlotsPannel1[i].GetComponent<Image>().sprite = pa.icon;
+                AbilitieSlotsPannel1[i].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
                 AbilitieSlotsPannel1[i].transform.parent.GetComponent<Button>().interactable = true;
                 i++;
             }
@@ -141,6 +166,7 @@ public class AbilitiesMenu : MonoBehaviour
             if (pa.name != "MainAbility")
             {
                 AbilitieSlotsPannel2[i].GetComponent<Image>().sprite = pa.icon;
+                AbilitieSlotsPannel2[i].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
                 AbilitieSlotsPannel2[i].transform.parent.GetComponent<Button>().interactable = true;
                 i++;
             }

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2ace867b5d03e40ad6a706699ad5a4, type: 3}
+  m_Name: None
+  m_EditorClassIdentifier: 
+  type: 0
+  abilityPrefab: {fileID: 0}
+  icon: {fileID: 0}
+  level: 0
+  cooldowTime: 0
+  range: 0
+  damage: 0
+  AreaOfEffect: 0
+  damageCenter: 0
+  damageMiddle: 0
+  damageFar: 0
+  totalTime: 0
+  timeIntervalForDamge: 0
+  healValue: 0
