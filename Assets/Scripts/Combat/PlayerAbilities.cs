@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 
 public enum abilityType { Normal, AreaOfEffect, DamageOverTime, Heal };
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "PLayerAbility", menuName = "Ability")]
 public class PlayerAbilities : ScriptableObject
 {
@@ -13,9 +15,10 @@ public class PlayerAbilities : ScriptableObject
 
     //  Display always
     public GameObject abilityPrefab;
-    public GameObject icon; // May need a difrent icon 
+
+    [HideInInspector] public Sprite icon; // May need a difrent icon for difrent Levels
     public int level = 0;
-    public int cooldowTime = 0;
+    public float cooldowTime = 0;
     public int range = 0;
 
     // Normal ability variables 
@@ -44,8 +47,9 @@ public class AbilitieEditor : Editor
 
         // Display always
         playerAbilities.abilityPrefab = (GameObject)EditorGUILayout.ObjectField("Ability Effect", playerAbilities.abilityPrefab, typeof(Object), true);
-        playerAbilities.icon = (GameObject)EditorGUILayout.ObjectField("Ability Icon", playerAbilities.icon, typeof(Object), true);
-        playerAbilities.cooldowTime = (int)EditorGUILayout.IntField("CooldownTime", playerAbilities.cooldowTime);
+        playerAbilities.icon = (Sprite)EditorGUILayout.ObjectField("Ability Icon", playerAbilities.icon, typeof(Sprite), true);
+        
+        playerAbilities.cooldowTime = (float)EditorGUILayout.FloatField("CooldownTime", playerAbilities.cooldowTime);
         playerAbilities.level = (int)EditorGUILayout.IntField("Level", playerAbilities.level);
 
         // Display DropDown
@@ -87,5 +91,9 @@ public class AbilitieEditor : Editor
             playerAbilities.healValue = (int)EditorGUILayout.IntField("HealValue", playerAbilities.healValue);
         }
 
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(playerAbilities);
+        }
     }
 }

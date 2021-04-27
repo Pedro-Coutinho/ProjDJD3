@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   rangeToShoot: 30
-  burstShoot: 1
+  areaOfEffect: 0
   spreadShoot: 0
   shootTimeCicle: 1.5
   nbrOfCurrencySpawned: 3

@@ -35,7 +35,6 @@ public class ParticleCollision : MonoBehaviour
                 pText.GetComponent<TextMeshPro>().color = new Color(255, 239, 0, 255);
 
                 e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 2;
-                Debug.Log("Entrou");
             }
             else
             {

@@ -15,6 +15,9 @@ public class AimCamera : MonoBehaviour
     public GameObject CameraNormal;
     public GameObject CameraAim;
     public GameObject CameraAim2;
+
+    public GameObject player;
+
     private GameObject[] Enemies;
 
     public LayerMask layerMask;
@@ -175,12 +178,10 @@ public class AimCamera : MonoBehaviour
     private void CancelAim()
     {
         CameraNormal.SetActive(true);
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_RecenterToTargetHeading.m_RecenteringTime = 0;
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_RecenterToTargetHeading.m_WaitTime = 0;
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_RecenterToTargetHeading.RecenterNow();
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_RecenterToTargetHeading.m_RecenteringTime = 2;
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_RecenterToTargetHeading.m_WaitTime = 1;
-        //CameraNormal.GetComponent<CinemachineFreeLook>().m_XAxis.Value = 0;
+
+        // Recenter Camera
+        CameraNormal.GetComponent<CinemachineFreeLook>().m_XAxis.Value = player.transform.rotation.eulerAngles.y;
+        CameraNormal.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
 
         CameraAim.SetActive(false);
         CameraAim2.SetActive(false);
@@ -209,31 +210,5 @@ public class AimCamera : MonoBehaviour
             }
             
         }
-
-
-
-        // Needs work
-        //var layermask = ~(1 << LayerMask.NameToLayer("Player"));
-        //if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, 200f, layermask))
-        //{
-        //    if (hitInfo.transform.tag == "Enemy")
-        //    {
-        //        playerData.enemylock = true;
-        //        playerData.currentEnemyPosition = hitInfo.transform.position;
-        //    }
-        //    else if (aiming == false)
-        //    {
-        //        playerData.enemylock = false;
-        //    }
-        //}
-
-        // Currently does nothing 
-        //IEnumerator SwitchToMainCamera()
-        //{
-        //    yield return new WaitForSeconds(1);
-        //    CameraNormal.SetActive(true);
-        //    CameraAim.SetActive(false);
-        //    CameraAim2.SetActive(false);
-        //}
     }
 }

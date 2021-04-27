@@ -249,6 +249,147 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""9457bf7b-3be9-4691-9c03-29158ffa4621"",
+            ""actions"": [
+                {
+                    ""name"": ""NavigationUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e3c6f79-c8dc-4307-8127-26c55e5be407"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""86b67415-6608-4f24-a455-fa2fe0933237"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""3fca48c6-782a-471d-af74-1fc00e2a73d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""7de05681-9688-4528-9e53-c83c2a1034c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d72a243-022b-4126-82f1-1fb03dc37959"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""a56c2dfd-dc18-4e83-8850-d8bac23406a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bb276113-50ca-4bbb-b3bd-2fd2eaa1022c"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1b84aed8-8989-45f3-a884-b35b0db0d9ed"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08ac4381-4b70-4b4d-9d77-6ab903e336b8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecf95a91-0b3f-4868-b1df-454ba607d266"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5729af99-9eac-4af1-ad25-73e6f0ad6c6c"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7c51ec2-feb3-4630-a300-4fe91e35239d"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99fe5e8d-1cf2-4be9-9acc-86496b345813"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4756525-6aa9-4809-b276-3fcf97688e0c"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -267,6 +408,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Gameplay_SlowTime = m_Gameplay.FindAction("SlowTime", throwIfNotFound: true);
         m_Gameplay_Menu = m_Gameplay.FindAction("Menu", throwIfNotFound: true);
         m_Gameplay_Ability2 = m_Gameplay.FindAction("Ability2", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_NavigationUp = m_Menu.FindAction("NavigationUp", throwIfNotFound: true);
+        m_Menu_Exit = m_Menu.FindAction("Exit", throwIfNotFound: true);
+        m_Menu_Enter = m_Menu.FindAction("Enter", throwIfNotFound: true);
+        m_Menu_NavigationDown = m_Menu.FindAction("NavigationDown", throwIfNotFound: true);
+        m_Menu_NavigationLeft = m_Menu.FindAction("NavigationLeft", throwIfNotFound: true);
+        m_Menu_NavigationRight = m_Menu.FindAction("NavigationRight", throwIfNotFound: true);
+        m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -433,6 +583,87 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_NavigationUp;
+    private readonly InputAction m_Menu_Exit;
+    private readonly InputAction m_Menu_Enter;
+    private readonly InputAction m_Menu_NavigationDown;
+    private readonly InputAction m_Menu_NavigationLeft;
+    private readonly InputAction m_Menu_NavigationRight;
+    private readonly InputAction m_Menu_Navigate;
+    public struct MenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NavigationUp => m_Wrapper.m_Menu_NavigationUp;
+        public InputAction @Exit => m_Wrapper.m_Menu_Exit;
+        public InputAction @Enter => m_Wrapper.m_Menu_Enter;
+        public InputAction @NavigationDown => m_Wrapper.m_Menu_NavigationDown;
+        public InputAction @NavigationLeft => m_Wrapper.m_Menu_NavigationLeft;
+        public InputAction @NavigationRight => m_Wrapper.m_Menu_NavigationRight;
+        public InputAction @Navigate => m_Wrapper.m_Menu_Navigate;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @NavigationUp.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationUp;
+                @NavigationUp.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationUp;
+                @NavigationUp.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationUp;
+                @Exit.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnExit;
+                @Enter.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @NavigationDown.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationDown;
+                @NavigationDown.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationDown;
+                @NavigationDown.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationDown;
+                @NavigationLeft.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationLeft;
+                @NavigationLeft.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationLeft;
+                @NavigationLeft.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationLeft;
+                @NavigationRight.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
+                @NavigationRight.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
+                @NavigationRight.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigationRight;
+                @Navigate.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NavigationUp.started += instance.OnNavigationUp;
+                @NavigationUp.performed += instance.OnNavigationUp;
+                @NavigationUp.canceled += instance.OnNavigationUp;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
+                @NavigationDown.started += instance.OnNavigationDown;
+                @NavigationDown.performed += instance.OnNavigationDown;
+                @NavigationDown.canceled += instance.OnNavigationDown;
+                @NavigationLeft.started += instance.OnNavigationLeft;
+                @NavigationLeft.performed += instance.OnNavigationLeft;
+                @NavigationLeft.canceled += instance.OnNavigationLeft;
+                @NavigationRight.started += instance.OnNavigationRight;
+                @NavigationRight.performed += instance.OnNavigationRight;
+                @NavigationRight.canceled += instance.OnNavigationRight;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
     public interface IGameplayActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -447,5 +678,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSlowTime(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnAbility2(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnNavigationUp(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
+        void OnNavigationDown(InputAction.CallbackContext context);
+        void OnNavigationLeft(InputAction.CallbackContext context);
+        void OnNavigationRight(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
     }
 }
