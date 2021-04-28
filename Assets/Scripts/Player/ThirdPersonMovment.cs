@@ -162,8 +162,8 @@ public class ThirdPersonMovment : MonoBehaviour
         }
         else
         {
-            if (currentSpeed > 0.2f * Time.deltaTime)
-                currentSpeed -= 0.1f;
+            if (currentSpeed > 0.1f )
+                currentSpeed -= 0.1f * Time.deltaTime;
             animator.SetFloat("CurrentSpeed", currentSpeed);
         }
         if (playerData.enemylock == true)
