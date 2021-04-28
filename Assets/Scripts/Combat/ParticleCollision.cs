@@ -31,6 +31,7 @@ public class ParticleCollision : MonoBehaviour
             if (critChance < 20)
             {
                 GameObject pText = Instantiate(PopUpDmg, e.HitPoint + new Vector3(0, 1, 0), Quaternion.identity);
+
                 pText.GetComponent<TextMeshPro>().text = 2.ToString();
                 pText.GetComponent<TextMeshPro>().color = new Color(255, 239, 0, 255);
 
@@ -39,6 +40,8 @@ public class ParticleCollision : MonoBehaviour
             else
             {
                 GameObject pText = Instantiate(PopUpDmg, e.HitPoint + new Vector3(0, 1, 0), Quaternion.identity);
+
+
                 pText.GetComponent<TextMeshPro>().text = 1.ToString();
                 pText.GetComponent<TextMeshPro>().color = new Color(255, 255, 255, 255);
 

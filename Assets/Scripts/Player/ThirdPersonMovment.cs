@@ -148,13 +148,23 @@ public class ThirdPersonMovment : MonoBehaviour
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             currentSpeed = playerData.speed * (Math.Abs(horizontal) + Math.Abs(vertical));
+            
             animator.SetBool("Running", true);
+            animator.SetFloat("CurrentSpeed", currentSpeed);
+
+            Debug.Log(currentSpeed);
 
             if (playerData.enemylock == false)
             {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
             }
 
+        }
+        else
+        {
+            if (currentSpeed > 0.1f )
+                currentSpeed -= 0.1f * Time.deltaTime;
+            animator.SetFloat("CurrentSpeed", currentSpeed);
         }
         if (playerData.enemylock == true)
         {

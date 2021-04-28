@@ -56,18 +56,21 @@ public class AimCamera : MonoBehaviour
         {
             screenPoint = mainCamera.WorldToViewportPoint(enemy.transform.position);
             var distance = (CenterImage.transform.position - mainCamera.WorldToScreenPoint(enemy.transform.position)).magnitude;
+
+            // Add enemy if it is on screen view its not dead and it is in range.
             if ((screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1) && enemysOnCameraView.Contains(enemy) == false
-                && enemy.GetComponent<Enemy>().isDead == false)
+                && enemy.GetComponent<Enemy>().isDead == false && (enemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 enemysOnCameraView.Add(enemy);
             }
-            else if ((screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1) == false || enemy.GetComponent<Enemy>().isDead == true)
+            else if ((screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1) == false || enemy.GetComponent<Enemy>().isDead == true 
+                || (enemy.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 enemysOnCameraView.Remove(enemy);
             }
 
             // Closest enemy to center
-            if (distance < currentMinDist)
+            if (distance < currentMinDist && (enemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 currentMinDist = distance;
                 CurrentClosetEnemy = enemy;
@@ -83,7 +86,8 @@ public class AimCamera : MonoBehaviour
         // Working But needs to be better
         if (CurrentClosetEnemy != null)
         {
-            if (enemysOnCameraView.Count != 0 && CurrentClosetEnemy != null && CurrentClosetEnemy.GetComponent<Enemy>().isDead == false)
+            if (enemysOnCameraView.Count != 0 && CurrentClosetEnemy != null && CurrentClosetEnemy.GetComponent<Enemy>().isDead == false 
+                && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 AutoAimImage.transform.gameObject.SetActive(true);
                 AutoAimImage.transform.position = mainCamera.WorldToScreenPoint(CurrentClosetEnemy.transform.position);
@@ -92,6 +96,10 @@ public class AimCamera : MonoBehaviour
                     aimCamera.LookAt = CurrentClosetEnemy.transform;
                     _currentTarget = CurrentClosetEnemy.transform.gameObject;
                 }
+            }
+            else
+            {
+                AutoAimImage.transform.gameObject.SetActive(false);
             }
 
             if (CurrentClosetEnemy.GetComponent<Enemy>().isDead == true)
@@ -145,7 +153,7 @@ public class AimCamera : MonoBehaviour
                 }
             }
 
-            if (enemysOnCameraView.Count < 1)
+            if (enemysOnCameraView.Count < 1 || (_currentTarget.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 _currentTarget = null;
                 CancelAim();
@@ -162,7 +170,7 @@ public class AimCamera : MonoBehaviour
     private void Aim()
     {
 
-        if (CurrentClosetEnemy != null)
+        if (CurrentClosetEnemy != null && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
         {
             playerData.enemylock = true;
             playerData.currentEnemyPosition = CurrentClosetEnemy.transform.position;
@@ -177,20 +185,22 @@ public class AimCamera : MonoBehaviour
     // Cancels aim 
     private void CancelAim()
     {
-        CameraNormal.SetActive(true);
+        if (aiming)
+        {
+            CameraNormal.SetActive(true);
 
-        // Recenter Camera
-        CameraNormal.GetComponent<CinemachineFreeLook>().m_XAxis.Value = player.transform.rotation.eulerAngles.y;
-        CameraNormal.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
+            // Recenter Camera
+            CameraNormal.GetComponent<CinemachineFreeLook>().m_XAxis.Value = player.transform.rotation.eulerAngles.y;
+            CameraNormal.GetComponent<CinemachineFreeLook>().m_YAxis.Value = 0.5f;
 
-        CameraAim.SetActive(false);
-        CameraAim2.SetActive(false);
-        aiming = false;
-        StartCoroutine(EnemyLockFalse());
-        
+            CameraAim.SetActive(false);
+            CameraAim2.SetActive(false);
+            aiming = false;
+            StartCoroutine(EnemyLockFalse());
+        }
     }
 
-
+    // BUG Makes possible to aim at invalid enemies for half a second
     IEnumerator EnemyLockFalse()
     {
         yield return new WaitForSeconds(0.5f);
@@ -201,10 +211,10 @@ public class AimCamera : MonoBehaviour
     private void CheckForEnemy()
     {
         // Needs to be worked
-        // Switch Enemy if its Dead
+        // Switch Enemy if its Dead or if it is out of range
         if (_currentTarget != null)
         {
-            if (_currentTarget.transform.GetComponent<Enemy>().isDead == true)
+            if (_currentTarget.transform.GetComponent<Enemy>().isDead == true || (_currentTarget.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 SwitchEnemy();
             }

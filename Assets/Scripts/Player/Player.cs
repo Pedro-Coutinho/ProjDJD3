@@ -28,4 +28,8 @@ public class Player : ScriptableObject
     [Header("Jump")]
     public float jumpSpeed = 10;
     public float doubleJumpMultiplier = 0.5f;
+
+    [Header("Combat")]
+    public int shootDist = 30;
+
 }
