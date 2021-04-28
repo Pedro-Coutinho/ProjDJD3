@@ -16,10 +16,8 @@ public class PopUpDmg : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         Destroy(gameObject);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

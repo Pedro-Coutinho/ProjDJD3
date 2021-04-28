@@ -63,7 +63,6 @@ public class EnemyShoot : MonoBehaviour
                 if (Physics.Raycast(player.position + new Vector3(0, 1, 0), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                 {
                     Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    Debug.Log(hit.point);
                 }
                 ring = Instantiate(areaOfEffectWarning, hit.point, Quaternion.identity);
                 StartCoroutine(AreaOfEffectAtack(hit.point));
