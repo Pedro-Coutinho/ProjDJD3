@@ -49,8 +49,24 @@ public class EnemyShoot : MonoBehaviour
             else if (canShoot && enemyType.areaOfEffect == true)
             {
                 animator.SetTrigger("Atack");
-                ring = Instantiate(areaOfEffectWarning, player.position, Quaternion.identity);
-                StartCoroutine(AreaOfEffectAtack(player.position));
+
+                // Draws a raycast downwards to spawn the atack always on the ground
+
+                // Bit shift the index of the layer (8) to get a bit mask
+                int layerMask = 1 << 8;
+                // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+                layerMask = ~layerMask;
+
+                RaycastHit hit;
+
+                // Does the ray intersect any objects excluding the player layer
+                if (Physics.Raycast(player.position + new Vector3(0, 1, 0), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                {
+                    Debug.DrawRay(transform.position + new Vector3(0, 3, 0), transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                    Debug.Log(hit.point);
+                }
+                ring = Instantiate(areaOfEffectWarning, hit.point, Quaternion.identity);
+                StartCoroutine(AreaOfEffectAtack(hit.point));
                 canShoot = false;
                 StartCoroutine(waitCicle(4));
             }

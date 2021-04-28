@@ -72,7 +72,6 @@ public class CastAbilities : MonoBehaviour
     // Spawns ability 1 (Area of Effect)
     private void CastAbility(int Ab)
     {
-        Debug.Log(playerStats.equipedLeftAbility.name);
         if (Ab == 1)
         {
             if (playerStats.equipedLeftAbility.name == "Meteor" )
@@ -103,7 +102,6 @@ public class CastAbilities : MonoBehaviour
     // Burst ability shot
     private void CastBurstAbility(int Ab)
     {
-        Debug.Log("Eniu");
         if (playerData.enemylock)
         {
             // Calculates Enemy direction

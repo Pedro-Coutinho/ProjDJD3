@@ -93,8 +93,6 @@ public class AbilitiesMenu : MonoBehaviour
     {
         btn = EventSystem.current.currentSelectedGameObject;
 
-        Debug.Log(btn.transform.Find("AbilityIcon").GetComponent<Image>().sprite.name);
-
         // Find the correct abilitie to swap and swap it
         foreach (PlayerAbilities pa in playerStats.posessedAbilities)
         {
@@ -111,8 +109,8 @@ public class AbilitiesMenu : MonoBehaviour
                     menuLeftAbilitieIcon.color = new Color32(255, 255, 255, 255);
                     equipedLeftAbilitieIcon.color = new Color32(255, 255, 255, 255);
 
-                    // Se if it is already in the other slot MAKES AN ERROR IF SPRITE IS NULL
-                    if (pa.name == menuRightAbilitieIcon.sprite.name)
+                    // Se if it is already in the other slot and if its not null
+                    if (menuRightAbilitieIcon.sprite == null ? false : (pa.name == menuRightAbilitieIcon.sprite.name))
                     {
                         menuRightAbilitieIcon.sprite = null;
                         equipedRightAbilitieIcon.sprite = null;
@@ -134,8 +132,8 @@ public class AbilitiesMenu : MonoBehaviour
                     menuRightAbilitieIcon.color = new Color32(255, 255, 255, 255);
                     equipedRightAbilitieIcon.color = new Color32(255, 255, 255, 255);
 
-                    // Se if it is already in the other slot
-                    if (pa.name == menuLeftAbilitieIcon.sprite.name)
+                    // Se if it is already in the other slot and if its not null
+                    if (menuLeftAbilitieIcon.sprite == null ? false : (pa.name == menuLeftAbilitieIcon.sprite.name))
                     {
                         menuLeftAbilitieIcon.sprite = null;
                         equipedLeftAbilitieIcon.sprite = null;
