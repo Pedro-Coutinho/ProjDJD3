@@ -59,18 +59,18 @@ public class AimCamera : MonoBehaviour
 
             // Add enemy if it is on screen view its not dead and it is in range.
             if ((screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1) && enemysOnCameraView.Contains(enemy) == false
-                && enemy.GetComponent<Enemy>().isDead == false && (enemy.transform.position - player.transform.position).magnitude < 30)
+                && enemy.GetComponent<Enemy>().isDead == false && (enemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 enemysOnCameraView.Add(enemy);
             }
             else if ((screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1) == false || enemy.GetComponent<Enemy>().isDead == true 
-                || (enemy.transform.position - player.transform.position).magnitude >= 30)
+                || (enemy.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 enemysOnCameraView.Remove(enemy);
             }
 
             // Closest enemy to center
-            if (distance < currentMinDist && (enemy.transform.position - player.transform.position).magnitude < 30)
+            if (distance < currentMinDist && (enemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 currentMinDist = distance;
                 CurrentClosetEnemy = enemy;
@@ -87,7 +87,7 @@ public class AimCamera : MonoBehaviour
         if (CurrentClosetEnemy != null)
         {
             if (enemysOnCameraView.Count != 0 && CurrentClosetEnemy != null && CurrentClosetEnemy.GetComponent<Enemy>().isDead == false 
-                && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < 30)
+                && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
             {
                 AutoAimImage.transform.gameObject.SetActive(true);
                 AutoAimImage.transform.position = mainCamera.WorldToScreenPoint(CurrentClosetEnemy.transform.position);
@@ -153,7 +153,7 @@ public class AimCamera : MonoBehaviour
                 }
             }
 
-            if (enemysOnCameraView.Count < 1 || (_currentTarget.transform.position - player.transform.position).magnitude >= 30)
+            if (enemysOnCameraView.Count < 1 || (_currentTarget.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 _currentTarget = null;
                 CancelAim();
@@ -170,7 +170,7 @@ public class AimCamera : MonoBehaviour
     private void Aim()
     {
 
-        if (CurrentClosetEnemy != null && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < 30)
+        if (CurrentClosetEnemy != null && (CurrentClosetEnemy.transform.position - player.transform.position).magnitude < playerData.shootDist)
         {
             playerData.enemylock = true;
             playerData.currentEnemyPosition = CurrentClosetEnemy.transform.position;
@@ -214,7 +214,7 @@ public class AimCamera : MonoBehaviour
         // Switch Enemy if its Dead or if it is out of range
         if (_currentTarget != null)
         {
-            if (_currentTarget.transform.GetComponent<Enemy>().isDead == true || (_currentTarget.transform.position - player.transform.position).magnitude >= 30)
+            if (_currentTarget.transform.GetComponent<Enemy>().isDead == true || (_currentTarget.transform.position - player.transform.position).magnitude >= playerData.shootDist)
             {
                 SwitchEnemy();
             }
