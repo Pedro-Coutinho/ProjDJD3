@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-
+// THIS CODE IS ALL FUCKED UP, REPEATS IT SELF AND IS JUST PAINFULL TO WATCH
 public class AbilitiesMenu : MonoBehaviour
 {
     public GameObject AimCanvas;
@@ -36,6 +36,27 @@ public class AbilitiesMenu : MonoBehaviour
 
     private int selectedPannel;
 
+    private void Awake()
+    {
+        // Set the correct ability icons at the start of the game NEEDS FIX, SPRITE CONNOT BE NULL
+        equipedLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
+        equipedRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
+        menuLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
+        menuRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
+
+        if (playerStats.equipedLeftAbility.name == "None")
+        {
+            equipedLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
+            menuLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
+        }
+
+        if (playerStats.equipedLeftAbility.name == "None")
+        {
+            equipedRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
+            menuRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
+        }
+
+    }
     // Start is called before the first frame update
     void Start()
     {
