@@ -14,7 +14,7 @@ public class CastAbilities : MonoBehaviour
     public Sprite goldFrame;
     public Sprite silverFrame;
 
-    public GameObject BasicAtack;
+    public PlayerAbilities mainAbility;
     public TextMeshProUGUI BasicAtackTimer;
     public Image basicAtackFrame;
 
@@ -48,6 +48,10 @@ public class CastAbilities : MonoBehaviour
         playerData.playerControls.Gameplay.Shoot.performed += ctx => CastBasicAbility(0);
         playerData.playerControls.Gameplay.Abilitiy1.performed += ctx => CastAbility(1);
         playerData.playerControls.Gameplay.Ability2.performed += ctx => CastAbility(2);
+
+        // Reset Ability levels for now (Remove this Later)
+        mainAbility.xp = 0;
+        mainAbility.level = 0;
     }
     
 
@@ -60,13 +64,55 @@ public class CastAbilities : MonoBehaviour
             enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
             animator.SetTrigger("Shoot");
             canShoot = false;
-            Instantiate(BasicAtack, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+            if (mainAbility.level == 0)
+                Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+            else 
+                StartCoroutine(mainAbilityVariant());
             StartCoroutine(ShootTime(Ab, 1));
+
+            // Main ability Evolution
+            mainAbility.xp += 1;
+            if (mainAbility.xp == 5)
+                mainAbility.level = 1;
+            if (mainAbility.xp == 10)
+                mainAbility.level = 2;
 
             // Set Frame
             basicAtackFrame.sprite = silverFrame;
         }
 
+    }
+
+    // Main Ability Level variants
+    IEnumerator mainAbilityVariant()
+    {
+        if ( mainAbility.level == 1)
+        {
+            Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+
+            yield return new WaitForSeconds(0.2f);
+
+            enemyPosition = playerData.currentEnemyPosition;
+            enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
+            Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+        }
+        else if (mainAbility.level == 2)
+        {
+            Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+
+            yield return new WaitForSeconds(0.2f);
+
+            enemyPosition = playerData.currentEnemyPosition;
+            enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
+            Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+
+            yield return new WaitForSeconds(0.2f);
+
+            enemyPosition = playerData.currentEnemyPosition;
+            enemyDirection = (enemyPosition - arrowSpawn.position).normalized;
+            Instantiate(mainAbility.abilityPrefab, arrowSpawn.position, Quaternion.LookRotation(enemyDirection));
+        }
+        
     }
 
     // Spawns ability 1 (Area of Effect)
