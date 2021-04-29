@@ -32,25 +32,49 @@ public class AbilitiesMenu : MonoBehaviour
     public GameObject[] AbilitieSlotsPannel1;
     public GameObject[] AbilitieSlotsPannel2;
 
+    public GameObject selectedBtn;
+
     private GameObject btn;
 
     private int selectedPannel;
+    private EventSystem eventSystem;
 
     private void Awake()
     {
-        // Set the correct ability icons at the start of the game NEEDS FIX, SPRITE CONNOT BE NULL
-        equipedLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
-        equipedRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
-        menuLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
-        menuRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
 
-        if (playerStats.equipedLeftAbility.name == "None")
+        // Set the correct ability icons at the start of the game NEEDS FIX, SPRITE CONNOT BE NULL
+        if (playerStats.equipedLeftAbility != null)
+        {
+            equipedLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
+            menuLeftAbilitieIcon.sprite = playerStats.equipedLeftAbility.icon;
+        }
+        else
+        {
+            equipedLeftAbilitieIcon.sprite = null;
+            menuLeftAbilitieIcon.sprite = null;
+        }
+
+        if (playerStats.equipedRightAbility != null)
+        {
+            equipedRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
+            menuRightAbilitieIcon.sprite = playerStats.equipedRightAbility.icon;
+        }
+        else
+        {
+            equipedRightAbilitieIcon.sprite = null;
+            menuRightAbilitieIcon.sprite = null;
+        }
+
+        
+        
+
+        if (playerStats.equipedLeftAbility == null)
         {
             equipedLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
             menuLeftAbilitieIcon.color = new Color32(150, 150, 150, 255);
         }
 
-        if (playerStats.equipedLeftAbility.name == "None")
+        if (playerStats.equipedLeftAbility == null)
         {
             equipedRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
             menuRightAbilitieIcon.color = new Color32(150, 150, 150, 255);
@@ -62,6 +86,8 @@ public class AbilitiesMenu : MonoBehaviour
     {
         playerData.playerControls.Gameplay.Menu.performed += ctx => OpenMenu();
         playerData.playerControls.Menu.Exit.performed += ctx => CloseMenu();
+
+        eventSystem = EventSystem.current;
     }
 
     
@@ -75,6 +101,9 @@ public class AbilitiesMenu : MonoBehaviour
         AimCanvas.SetActive(false);
         Ui.SetActive(false);
         AbilityMenu.SetActive(true);
+
+        // Select the first btn
+        eventSystem.SetSelectedGameObject(selectedBtn);
     }
     private void CloseMenu()
     {

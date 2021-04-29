@@ -390,6 +390,147 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Shoop"",
+            ""id"": ""35ef4534-e259-4fe6-8c26-646014db3607"",
+            ""actions"": [
+                {
+                    ""name"": ""NavigationUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae0adcc7-0cfc-4b19-b645-d9fea4ca3c07"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8be5728-f535-4f7f-8278-26bf338b2711"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""7316159d-2ff0-4ac2-814b-a29feb7ec03c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""5984ce52-2846-4720-ab25-2e161bdcda97"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""96664225-8cac-4420-8aaf-d6a206e66277"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NavigationRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""57d7e248-1e64-4e70-ab0c-df4bd15710f7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""d9038aca-d487-48a6-b604-ee4b37956b62"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f8f0a40d-e8e4-4b3a-8948-427fd9ef6afd"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12e1ea0f-e9e6-4570-a180-62cd9bfd0683"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f73493c-3878-4265-b9d8-8807a48b9020"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b7f5b79-d420-4348-b4d4-c439f5242fb1"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c5fbdb5-a588-475d-9f69-228856263587"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e712d14d-d211-426a-aaaa-f42d3a64a73f"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""NavigationRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11999e6b-57a2-4ffd-9da4-f2d9dca8865d"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -417,6 +558,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Menu_NavigationLeft = m_Menu.FindAction("NavigationLeft", throwIfNotFound: true);
         m_Menu_NavigationRight = m_Menu.FindAction("NavigationRight", throwIfNotFound: true);
         m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
+        // Shoop
+        m_Shoop = asset.FindActionMap("Shoop", throwIfNotFound: true);
+        m_Shoop_NavigationUp = m_Shoop.FindAction("NavigationUp", throwIfNotFound: true);
+        m_Shoop_Exit = m_Shoop.FindAction("Exit", throwIfNotFound: true);
+        m_Shoop_Enter = m_Shoop.FindAction("Enter", throwIfNotFound: true);
+        m_Shoop_NavigationDown = m_Shoop.FindAction("NavigationDown", throwIfNotFound: true);
+        m_Shoop_NavigationLeft = m_Shoop.FindAction("NavigationLeft", throwIfNotFound: true);
+        m_Shoop_NavigationRight = m_Shoop.FindAction("NavigationRight", throwIfNotFound: true);
+        m_Shoop_Navigate = m_Shoop.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -664,6 +814,87 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+
+    // Shoop
+    private readonly InputActionMap m_Shoop;
+    private IShoopActions m_ShoopActionsCallbackInterface;
+    private readonly InputAction m_Shoop_NavigationUp;
+    private readonly InputAction m_Shoop_Exit;
+    private readonly InputAction m_Shoop_Enter;
+    private readonly InputAction m_Shoop_NavigationDown;
+    private readonly InputAction m_Shoop_NavigationLeft;
+    private readonly InputAction m_Shoop_NavigationRight;
+    private readonly InputAction m_Shoop_Navigate;
+    public struct ShoopActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ShoopActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @NavigationUp => m_Wrapper.m_Shoop_NavigationUp;
+        public InputAction @Exit => m_Wrapper.m_Shoop_Exit;
+        public InputAction @Enter => m_Wrapper.m_Shoop_Enter;
+        public InputAction @NavigationDown => m_Wrapper.m_Shoop_NavigationDown;
+        public InputAction @NavigationLeft => m_Wrapper.m_Shoop_NavigationLeft;
+        public InputAction @NavigationRight => m_Wrapper.m_Shoop_NavigationRight;
+        public InputAction @Navigate => m_Wrapper.m_Shoop_Navigate;
+        public InputActionMap Get() { return m_Wrapper.m_Shoop; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ShoopActions set) { return set.Get(); }
+        public void SetCallbacks(IShoopActions instance)
+        {
+            if (m_Wrapper.m_ShoopActionsCallbackInterface != null)
+            {
+                @NavigationUp.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationUp;
+                @NavigationUp.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationUp;
+                @NavigationUp.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationUp;
+                @Exit.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnExit;
+                @Enter.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnEnter;
+                @NavigationDown.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationDown;
+                @NavigationDown.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationDown;
+                @NavigationDown.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationDown;
+                @NavigationLeft.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationLeft;
+                @NavigationLeft.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationLeft;
+                @NavigationLeft.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationLeft;
+                @NavigationRight.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationRight;
+                @NavigationRight.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationRight;
+                @NavigationRight.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigationRight;
+                @Navigate.started -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_ShoopActionsCallbackInterface.OnNavigate;
+            }
+            m_Wrapper.m_ShoopActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @NavigationUp.started += instance.OnNavigationUp;
+                @NavigationUp.performed += instance.OnNavigationUp;
+                @NavigationUp.canceled += instance.OnNavigationUp;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
+                @NavigationDown.started += instance.OnNavigationDown;
+                @NavigationDown.performed += instance.OnNavigationDown;
+                @NavigationDown.canceled += instance.OnNavigationDown;
+                @NavigationLeft.started += instance.OnNavigationLeft;
+                @NavigationLeft.performed += instance.OnNavigationLeft;
+                @NavigationLeft.canceled += instance.OnNavigationLeft;
+                @NavigationRight.started += instance.OnNavigationRight;
+                @NavigationRight.performed += instance.OnNavigationRight;
+                @NavigationRight.canceled += instance.OnNavigationRight;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
+            }
+        }
+    }
+    public ShoopActions @Shoop => new ShoopActions(this);
     public interface IGameplayActions
     {
         void OnJump(InputAction.CallbackContext context);
@@ -680,6 +911,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnAbility2(InputAction.CallbackContext context);
     }
     public interface IMenuActions
+    {
+        void OnNavigationUp(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
+        void OnNavigationDown(InputAction.CallbackContext context);
+        void OnNavigationLeft(InputAction.CallbackContext context);
+        void OnNavigationRight(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
+    }
+    public interface IShoopActions
     {
         void OnNavigationUp(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
