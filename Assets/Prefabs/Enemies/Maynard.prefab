@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bee27670d328a44b40015b829d6596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: 5485f11e385617e4e95fd745e093dc9b, type: 2}
+  enemyStats: {fileID: 11400000, guid: 3faf993a48ab029429bf97841fc64c16, type: 2}
   animator: {fileID: 1020536498145624628}
   Currency: {fileID: 5068459882462525, guid: fc27ced94e669ab4cb7f8f13b28e014d, type: 3}
   currentHealth: 0
