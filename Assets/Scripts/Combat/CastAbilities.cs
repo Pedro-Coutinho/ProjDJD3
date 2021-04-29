@@ -70,12 +70,8 @@ public class CastAbilities : MonoBehaviour
                 StartCoroutine(mainAbilityVariant());
             StartCoroutine(ShootTime(Ab, 1));
 
-            // Main ability Evolution
+            // Main ability Evolution (PROBABLY BETTER TO MAKE A SCRIPT JUST FOR EVOLUTIONS)
             mainAbility.xp += 1;
-            if (mainAbility.xp == 5)
-                mainAbility.level = 1;
-            if (mainAbility.xp == 10)
-                mainAbility.level = 2;
 
             // Set Frame
             basicAtackFrame.sprite = silverFrame;
