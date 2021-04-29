@@ -80,7 +80,17 @@ public class AimCamera : MonoBehaviour
         if (Enemies == null)
         {
             CurrentClosetEnemy = null;
+
         }
+
+        // if (enemysOnCameraView.Count < 1)
+        // {
+        //     playerData.speed = 7;
+        // }
+        // else
+        // {
+        //     playerData.speed = 4.5f;
+        // }
 
 
         // Working But needs to be better
@@ -178,6 +188,8 @@ public class AimCamera : MonoBehaviour
             CameraAim.SetActive(true);
             CameraNormal.SetActive(false);
             aiming = true;
+
+            playerData.speed = playerData.aimingSpeed;
         }
 
     }
@@ -197,6 +209,8 @@ public class AimCamera : MonoBehaviour
             CameraAim2.SetActive(false);
             aiming = false;
             StartCoroutine(EnemyLockFalse());
+
+            playerData.speed = playerData.normalSpeed;
         }
     }
 

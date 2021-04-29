@@ -3755,10 +3755,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1529948840}
     - target: {fileID: 6741404195965506827, guid: bc46760693021204291451a16ddd6f33, type: 3}
-      propertyPath: staminaBars.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6741404195965506827, guid: bc46760693021204291451a16ddd6f33, type: 3}
       propertyPath: staminaBars.Array.data[0]
       value: 
       objectReference: {fileID: 1218062934}
@@ -3790,10 +3786,6 @@ PrefabInstance:
       propertyPath: staminaBars.Array.data[7]
       value: 
       objectReference: {fileID: 1218062927}
-    - target: {fileID: 6741404195965506828, guid: bc46760693021204291451a16ddd6f33, type: 3}
-      propertyPath: mainAbility
-      value: 
-      objectReference: {fileID: 11400000, guid: e74541a4747c1a54c98721a1c27de827, type: 2}
     - target: {fileID: 6741404195965506828, guid: bc46760693021204291451a16ddd6f33, type: 3}
       propertyPath: Ability_1Timer
       value: 
@@ -5461,7 +5453,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529948840}
-  m_LocalRotation: {x: 0.023388078, y: 0.00000003440335, z: -8.0484835e-10, w: 0.9997265}
+  m_LocalRotation: {x: 0.023388078, y: -0.00000003440335, z: 8.0484835e-10, w: 0.9997265}
   m_LocalPosition: {x: 40.75, y: 203.53, z: 43.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5819,7 +5811,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602920008}
-  m_LocalRotation: {x: 0.023388077, y: 0.000000017201675, z: -4.0242415e-10, w: 0.9997265}
+  m_LocalRotation: {x: 0.023388077, y: -0.000000017201675, z: 4.0242415e-10, w: 0.9997265}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

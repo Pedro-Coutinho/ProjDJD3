@@ -16,7 +16,10 @@ public class Player : ScriptableObject
     public Vector3 currentEnemyPosition;
 
     [Header("Movement")]
-    public float speed = 6f;
+    [HideInInspector]
+    public float speed = 7f;
+    public float aimingSpeed = 4.5f;
+    public float normalSpeed = 7f;
     public float turnSmoothTime = 0.1f;
 
     [Header("Gravity")]
