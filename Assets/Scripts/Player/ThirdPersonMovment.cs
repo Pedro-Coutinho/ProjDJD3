@@ -111,8 +111,6 @@ public class ThirdPersonMovment : MonoBehaviour
             StartCoroutine(RandomizeIdle());
             playIdleVariant = false;
         }
-        else
-            //Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Basic"));
             
         CheckIfIsFalling();
         Gravity();
@@ -232,13 +230,15 @@ public class ThirdPersonMovment : MonoBehaviour
     IEnumerator RandomizeIdle()
     {
         float random = UnityEngine.Random.Range(0f, 1f);
-        if (random >= 0.8f)
-            animator.SetTrigger("IdleKick");
-        else if(0.6f <= random && random < 0.8f)
+        if (random >= 0.9f)
             animator.SetTrigger("IdleThrow");
+        else if (0.7f <= random && random < 0.9f)
+            animator.SetTrigger("IdleKick");
+        else if (random < 0.2f)
+            animator.SetTrigger("IdleArmStrech");
 
         Debug.Log(random);
-        yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(20, 40));
         playIdleVariant = true;
     }
 
