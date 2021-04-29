@@ -34,7 +34,9 @@ public class ThirdPersonMovment : MonoBehaviour
     private Vector3 moveDir;
     private Vector2 move;
 
-    private int currentStamina; 
+    private int currentStamina;
+
+    private bool playIdleVariant = true;
 
     private void Awake()
     {
@@ -104,6 +106,14 @@ public class ThirdPersonMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playIdleVariant && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Basic"))
+        {
+            StartCoroutine(RandomizeIdle());
+            playIdleVariant = false;
+        }
+        else
+            Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Basic"));
+            
         CheckIfIsFalling();
         Gravity();
         CalculateMovment();
@@ -133,12 +143,15 @@ public class ThirdPersonMovment : MonoBehaviour
         moveDir = new Vector3(0, 0, 0);
         animator.SetBool("Running", false);
     }
+
+    
     private void CalculateMovment()
     {
+        float previousSpeed = currentSpeed;
         float horizontal = move.x;
         float vertical = move.y;
         Vector3 directon = new Vector3(horizontal, 0f, vertical).normalized;
-        if (directon.magnitude >= 0.1f)
+        if (directon.magnitude >= 0.8f)
         {
             float targetAngle = Mathf.Atan2(directon.x, directon.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
 
@@ -148,29 +161,35 @@ public class ThirdPersonMovment : MonoBehaviour
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             currentSpeed = playerData.speed * (Math.Abs(horizontal) + Math.Abs(vertical));
+
             
             animator.SetBool("Running", true);
-            animator.SetFloat("CurrentSpeed", currentSpeed);
+            //Verifica se a diferença entre a velocidade anterior e a atual é maior do que 3
+            if (currentSpeed + 3 < previousSpeed)
+                // caso seja soma-se a velocidade atual a diferença entre as duas a dividir por 2
+                currentSpeed += (previousSpeed - currentSpeed)/2;
 
-            Debug.Log(currentSpeed);
+            animator.SetFloat("CurrentSpeed", currentSpeed);
 
             if (playerData.enemylock == false)
             {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
             }
-
         }
         else
         {
-            if (currentSpeed > 0.1f )
-                currentSpeed -= 0.1f * Time.deltaTime;
+            currentSpeed -= (currentSpeed * 5) * Time.deltaTime;
+            if (currentSpeed < 0f)
+                currentSpeed = 0;
+                
             animator.SetFloat("CurrentSpeed", currentSpeed);
+            animator.SetBool("Running", false);
         }
+
         if (playerData.enemylock == true)
         {
             transform.rotation = Quaternion.Euler(0f, MainCamera.transform.rotation.eulerAngles.y, 0f);
         }
-
     }
 
     private void Gravity()
@@ -179,7 +198,7 @@ public class ThirdPersonMovment : MonoBehaviour
         {
             if (playerData.currentGravity > playerData.maxGravity)
             {
-                playerData.currentGravity -= playerData.gravity * Time.unscaledDeltaTime;
+                playerData.currentGravity -= playerData.gravity * Time.unscaledDeltaTime; 
             }
 
             directionY += gravityDirection * -playerData.currentGravity * Time.unscaledDeltaTime;
@@ -208,6 +227,19 @@ public class ThirdPersonMovment : MonoBehaviour
             canDoubleJump = false;
         }
 
+    }
+
+    IEnumerator RandomizeIdle()
+    {
+        float random = UnityEngine.Random.Range(0f, 1f);
+        if (random >= 0.8f)
+            animator.SetTrigger("IdleKick");
+        else if(0.6f <= random && random < 0.8f)
+            animator.SetTrigger("IdleThrow");
+
+        Debug.Log(random);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(20, 40));
+        playIdleVariant = true;
     }
 
     private void OnEnable()
