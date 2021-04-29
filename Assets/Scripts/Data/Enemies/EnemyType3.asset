@@ -16,5 +16,5 @@ MonoBehaviour:
   rangeToShoot: 30
   areaOfEffect: 0
   spreadShoot: 0
-  shootTimeCicle: 1.5
+  shootTimeCicle: 0
   nbrOfCurrencySpawned: 3
