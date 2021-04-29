@@ -238,7 +238,7 @@ public class ThirdPersonMovment : MonoBehaviour
             animator.SetTrigger("IdleThrow");
 
         Debug.Log(random);
-        yield return new WaitForSeconds(UnityEngine.Random.Range(20, 40));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
         playIdleVariant = true;
     }
 
