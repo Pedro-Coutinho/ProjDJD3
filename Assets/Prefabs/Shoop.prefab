@@ -17886,6 +17886,9 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 1ca381d64e7caf142925c83d8d2da820, type: 2}
   shoopUI: {fileID: 826233033673241986}
   selectedBtn: {fileID: 826233035190613361}
+  playerStats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
+  meteroAbility: {fileID: 11400000, guid: e586cbb32589db547bee08d2c6935ceb, type: 2}
+  burstAbility: {fileID: 11400000, guid: 8585c78c95f0ea4428ea73dc2c7147b4, type: 2}
 --- !u!136 &3498499535664151426
 CapsuleCollider:
   m_ObjectHideFlags: 0

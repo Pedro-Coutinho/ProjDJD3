@@ -20,12 +20,12 @@ public class AbilityEvolution : MonoBehaviour
     void Update()
     {
         // Main Ability
-        if (mainAbility.xp == 5 && mainAbility.level != 1)
+        if (mainAbility.xp == 10 && mainAbility.level != 1)
         {
             mainAbility.level = 1;
             StartCoroutine(DispalayEvolution());
         }
-        if (mainAbility.xp == 10 && mainAbility.level != 2)
+        if (mainAbility.xp == 20 && mainAbility.level != 2)
         {
             mainAbility.level = 2;
             StartCoroutine(DispalayEvolution());

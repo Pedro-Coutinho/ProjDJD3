@@ -10,6 +10,10 @@ public class Shoop : MonoBehaviour
     public Player playerData;
     public GameObject shoopUI;
     public GameObject selectedBtn;
+    public PlayerStats playerStats;
+
+    public PlayerAbilities meteroAbility;
+    public PlayerAbilities burstAbility;
 
     private GameObject UI;
 
@@ -60,12 +64,20 @@ public class Shoop : MonoBehaviour
 
     public void BuyMeteorAbility()
     {
-
+        if (playerStats.currentCurrency >= 150)
+        {
+            playerStats.posessedAbilities.Add(meteroAbility);
+            playerStats.currentCurrency -= 150;
+        }
     }
 
     public void BuyBurstAbility()
     {
-
+        if (playerStats.currentCurrency >= 100)
+        {
+            playerStats.posessedAbilities.Add(burstAbility);
+            playerStats.currentCurrency -= 100;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -19,8 +20,7 @@ public class CurrencyManager : MonoBehaviour
     {
         if (other.tag == "Currency")
         {
-            playerStats.currentCurrency += Random.Range(24, 35);
-            currencyText.text = playerStats.currentCurrency.ToString();
+            playerStats.currentCurrency += UnityEngine.Random.Range(24, 35);
             Destroy(other.gameObject);
         }
 
@@ -28,6 +28,9 @@ public class CurrencyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerStats.currentCurrency != Convert.ToInt32(currencyText.text))
+        {
+            currencyText.text = playerStats.currentCurrency.ToString();
+        }
     }
 }
