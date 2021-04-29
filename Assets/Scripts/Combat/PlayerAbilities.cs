@@ -18,6 +18,7 @@ public class PlayerAbilities : ScriptableObject
 
     [HideInInspector] public Sprite icon; // May need a difrent icon for difrent Levels
     public int level = 0;
+    public int xp = 0;
     public float cooldowTime = 0;
     public int range = 0;
 
@@ -51,6 +52,7 @@ public class AbilitieEditor : Editor
         
         playerAbilities.cooldowTime = (float)EditorGUILayout.FloatField("CooldownTime", playerAbilities.cooldowTime);
         playerAbilities.level = (int)EditorGUILayout.IntField("Level", playerAbilities.level);
+        playerAbilities.xp = (int)EditorGUILayout.IntField("XP", playerAbilities.xp);
 
         // Display DropDown
         playerAbilities.type = (abilityType)EditorGUILayout.EnumPopup("AbilitieType", playerAbilities.type);

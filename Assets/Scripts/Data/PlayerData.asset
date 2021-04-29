@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   enemylock: 0
-  currentEnemyPosition: {x: -15.19, y: 0.8, z: 47.34}
-  speed: 6
+  currentEnemyPosition: {x: 77.86, y: 200.80998, z: 29.370003}
+  speed: 6.5
   turnSmoothTime: 0.1
   gravity: 15
-  currentGravity: -20.010756
+  currentGravity: -20
   constantGravity: -1
   maxGravity: -20
-  jumpSpeed: 5
-  doubleJumpMultiplier: 2.5
+  jumpSpeed: 7.8
+  doubleJumpMultiplier: 1.7
+  shootDist: 30
