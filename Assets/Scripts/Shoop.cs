@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BookStand : MonoBehaviour
+public class Shoop : MonoBehaviour
 {
-    private Animator animator;
     public GameObject bookCam;
     public Player playerData;
     private GameObject UI;
@@ -16,19 +15,18 @@ public class BookStand : MonoBehaviour
     void Start()
     {
         UI = GameObject.FindGameObjectWithTag("UI");
-        animator = gameObject.GetComponent<Animator>();
         playerData.playerControls.Gameplay.Interact.performed += ctx => InteractInterface();
     }
     private void InteractInterface()
     {
         if (playerInZone && !interfaceActive)
         {
-            
+
             bookCam.SetActive(true);
             interfaceActive = true;
             UI.SetActive(false);
         }
-        else if(playerInZone)
+        else if (playerInZone)
         {
             bookCam.SetActive(false);
             interfaceActive = false;
@@ -40,7 +38,6 @@ public class BookStand : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            animator.SetTrigger("BookUp");
             playerInZone = true;
         }
     }
@@ -49,7 +46,6 @@ public class BookStand : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            animator.SetTrigger("BookDown");
             playerInZone = false;
             bookCam.SetActive(false);
             UI.SetActive(true);

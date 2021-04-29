@@ -112,7 +112,7 @@ public class ThirdPersonMovment : MonoBehaviour
             playIdleVariant = false;
         }
         else
-            Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Basic"));
+            //Debug.Log(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle Basic"));
             
         CheckIfIsFalling();
         Gravity();
