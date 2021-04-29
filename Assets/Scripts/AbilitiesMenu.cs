@@ -104,6 +104,9 @@ public class AbilitiesMenu : MonoBehaviour
 
         // Select the first btn
         eventSystem.SetSelectedGameObject(selectedBtn);
+
+        AbilitiesPannel_1.SetActive(false);
+        AbilitiesPannel_2.SetActive(false);
     }
     private void CloseMenu()
     {

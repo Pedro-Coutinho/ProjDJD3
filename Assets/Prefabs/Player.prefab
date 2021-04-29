@@ -1907,7 +1907,7 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: ffc7e61bcfcf3f74f83e13272afd785f, type: 2}
   goldFrame: {fileID: 21300000, guid: ce088abf49a45b74f83c23060715d5eb, type: 3}
   silverFrame: {fileID: 21300000, guid: 4bf4d79b24e802a44a20792f31ef5aa8, type: 3}
-  BasicAtack: {fileID: 153592, guid: 449e5ef0f6ec9b040ac709ac81442974, type: 3}
+  mainAbility: {fileID: 11400000, guid: e74541a4747c1a54c98721a1c27de827, type: 2}
   BasicAtackTimer: {fileID: 0}
   basicAtackFrame: {fileID: 0}
   Ability_1Timer: {fileID: 0}

@@ -3912,7 +3912,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362936868}
-  m_LocalRotation: {x: 0.023388257, y: -0.0000000010751047, z: 2.5151704e-11, w: 0.9997265}
+  m_LocalRotation: {x: 0.023388257, y: 0.0000000010751047, z: -2.5151704e-11, w: 0.9997265}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18311,7 +18311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3498499535664151484, guid: ec0a9135c5708b04ab9ce87f0c759cca, type: 3}
       propertyPath: m_Name
-      value: Shoop
+      value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 3498499535664424554, guid: ec0a9135c5708b04ab9ce87f0c759cca, type: 3}
       propertyPath: m_RootOrder
@@ -18497,11 +18497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034703174993909327, guid: ec708b8dd7fbd8245b29d2486612f51e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000021502093
+      value: 0.0000000021502093
       objectReference: {fileID: 0}
     - target: {fileID: 1034703174993909327, guid: ec708b8dd7fbd8245b29d2486612f51e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.0303397e-11
+      value: -5.0303397e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1034703174993909327, guid: ec708b8dd7fbd8245b29d2486612f51e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18651,10 +18651,6 @@ PrefabInstance:
       propertyPath: staminaBars.Array.data[7]
       value: 
       objectReference: {fileID: 903916678}
-    - target: {fileID: 6741404195965506828, guid: bc46760693021204291451a16ddd6f33, type: 3}
-      propertyPath: mainAbility
-      value: 
-      objectReference: {fileID: 11400000, guid: e74541a4747c1a54c98721a1c27de827, type: 2}
     - target: {fileID: 6741404195965506828, guid: bc46760693021204291451a16ddd6f33, type: 3}
       propertyPath: Ability_1Timer
       value: 

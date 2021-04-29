@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 using System;
 
 public class Shoop : MonoBehaviour
@@ -9,8 +11,10 @@ public class Shoop : MonoBehaviour
     public GameObject bookCam;
     public Player playerData;
     public GameObject shoopUI;
-    public GameObject selectedBtn;
+    public GameObject selectedBurstBtn;
+    public GameObject selectedMeteorBtn;
     public PlayerStats playerStats;
+    public TextMeshProUGUI currency;
 
     public PlayerAbilities meteroAbility;
     public PlayerAbilities burstAbility;
@@ -43,8 +47,26 @@ public class Shoop : MonoBehaviour
             playerData.playerControls.Gameplay.Disable();
             playerData.playerControls.Shoop.Enable();
 
+            // Set diplayed currency
+            currency.text = playerStats.currentCurrency.ToString();
             // Select the correct Btn
-            eventSystem.SetSelectedGameObject(selectedBtn);
+            eventSystem.SetSelectedGameObject(selectedMeteorBtn);
+            foreach (PlayerAbilities ab in playerStats.posessedAbilities)
+            {
+                if (ab.name == "Meteor")
+                {
+                    selectedMeteorBtn.GetComponent<Button>().interactable = false;
+                    // Select the correct Btn
+                    eventSystem.SetSelectedGameObject(selectedBurstBtn);
+                }
+
+                if (ab.name == "Burst")
+                {
+                    selectedBurstBtn.GetComponent<Button>().interactable = false;
+                }
+            }
+
+            
         }
         
     }
@@ -68,6 +90,10 @@ public class Shoop : MonoBehaviour
         {
             playerStats.posessedAbilities.Add(meteroAbility);
             playerStats.currentCurrency -= 150;
+            currency.text = playerStats.currentCurrency.ToString();
+            eventSystem.currentSelectedGameObject.GetComponent<Button>().interactable = false;
+            eventSystem.SetSelectedGameObject(selectedBurstBtn);
+
         }
     }
 
@@ -77,6 +103,9 @@ public class Shoop : MonoBehaviour
         {
             playerStats.posessedAbilities.Add(burstAbility);
             playerStats.currentCurrency -= 100;
+            currency.text = playerStats.currentCurrency.ToString();
+            eventSystem.currentSelectedGameObject.GetComponent<Button>().interactable = false;
+            eventSystem.SetSelectedGameObject(selectedMeteorBtn);
         }
     }
 
