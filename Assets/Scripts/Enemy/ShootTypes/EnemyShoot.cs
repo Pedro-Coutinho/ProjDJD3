@@ -67,7 +67,7 @@ public class EnemyShoot : MonoBehaviour
                 ring = Instantiate(areaOfEffectWarning, hit.point, Quaternion.identity);
                 StartCoroutine(AreaOfEffectAtack(hit.point));
                 canShoot = false;
-                StartCoroutine(waitCicle(4));
+                StartCoroutine(waitCicle(enemyType.shootTimeCicle));
             }
             
         }

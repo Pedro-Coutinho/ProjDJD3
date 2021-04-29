@@ -192,6 +192,7 @@ public class ThirdPersonMovment : MonoBehaviour
 
     private void Gravity()
     {
+
         if (gameObject.transform.GetComponent<CharacterController>().isGrounded == false)
         {
             if (playerData.currentGravity > playerData.maxGravity)
@@ -212,9 +213,30 @@ public class ThirdPersonMovment : MonoBehaviour
     {
         if (IsGrounded())
         {
-            canDoubleJump = true;
+            
             animator.SetTrigger("Jump");
-            directionY.y = playerData.jumpSpeed;
+            RaycastHit hit;
+            Vector3 normal;
+            if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), -transform.up, out hit, 10))
+            {
+                normal = hit.normal;
+                float ang = Vector3.Angle(normal, Vector3.up);
+                
+                if (ang >= 40)
+                {
+                    directionY = normal * playerData.jumpSpeed;
+                    Debug.Log(ang);
+                    playerData.playerControls.Gameplay.Disable();
+                    StartCoroutine(StopBackImpluse());
+                }
+                else
+                {
+                    canDoubleJump = true;
+                    directionY.y = playerData.jumpSpeed;
+                }
+                
+            }
+                
         }
         else if (canDoubleJump)
         {
@@ -225,6 +247,13 @@ public class ThirdPersonMovment : MonoBehaviour
             canDoubleJump = false;
         }
 
+    }
+    IEnumerator StopBackImpluse()
+    {
+        yield return new WaitForSeconds(0.5f);
+        playerData.playerControls.Gameplay.Enable();
+        directionY.x = 0;
+        directionY.z = 0;
     }
 
     IEnumerator RandomizeIdle()
@@ -237,7 +266,7 @@ public class ThirdPersonMovment : MonoBehaviour
         else if (random < 0.2f)
             animator.SetTrigger("IdleArmStrech");
 
-        Debug.Log(random);
+        //Debug.Log(random);
         yield return new WaitForSeconds(UnityEngine.Random.Range(20, 40));
         playIdleVariant = true;
     }
