@@ -11,7 +11,9 @@ public class AbilityEvolution : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UiAbilityEvolution.SetActive(false);
+        // Reset Ability levels for now (Remove this Later)
+        mainAbility.xp = 0;
+        mainAbility.level = 0;
     }
 
     // Update is called once per frame
@@ -32,11 +34,11 @@ public class AbilityEvolution : MonoBehaviour
 
     IEnumerator DispalayEvolution()
     {
-        //UiAbilityEvolution.SetActive(true);
+
         text.text = "LEVEL " + mainAbility.level + " -> " + (mainAbility.level + 1).ToString();
         UiAbilityEvolution.gameObject.GetComponent<Animator>().SetBool("Display", true);
+
         yield return new WaitForSeconds(3);
-        //UiAbilityEvolution.SetActive(false);
         UiAbilityEvolution.gameObject.GetComponent<Animator>().SetBool("Display", false);
     }
 }

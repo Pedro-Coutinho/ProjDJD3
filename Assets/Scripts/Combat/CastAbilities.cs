@@ -49,9 +49,7 @@ public class CastAbilities : MonoBehaviour
         playerData.playerControls.Gameplay.Abilitiy1.performed += ctx => CastAbility(1);
         playerData.playerControls.Gameplay.Ability2.performed += ctx => CastAbility(2);
 
-        // Reset Ability levels for now (Remove this Later)
-        mainAbility.xp = 0;
-        mainAbility.level = 0;
+        
     }
     
 
