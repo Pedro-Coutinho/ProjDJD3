@@ -213,8 +213,10 @@ public class ThirdPersonMovment : MonoBehaviour
     {
         if (IsGrounded())
         {
-            
-            animator.SetTrigger("Jump");
+            if (currentSpeed > 4)
+                animator.Play("RunJump", 0, 0.2f);
+            else
+                animator.Play("Jump");
             RaycastHit hit;
             Vector3 normal;
             if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), -transform.up, out hit, 10))
@@ -242,7 +244,7 @@ public class ThirdPersonMovment : MonoBehaviour
         {
             //doubleJumpParticalLeft.Play();
             //doubleJumpParticalRight.Play();
-            animator.SetTrigger("DoubleJump");
+            animator.Play("DoubleJump");
             directionY.y = playerData.jumpSpeed * playerData.doubleJumpMultiplier;
             canDoubleJump = false;
         }
