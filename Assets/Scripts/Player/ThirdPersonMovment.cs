@@ -148,8 +148,7 @@ public class ThirdPersonMovment : MonoBehaviour
         float previousSpeed = currentSpeed;
         float horizontal = move.x;
         float vertical = move.y;
-        Debug.Log("X = " + move.x);
-        Debug.Log("Y = " + move.y);
+        
         Vector3 directon = new Vector3(horizontal, 0f, vertical).normalized;
         if (directon.magnitude >= 0.8f)
         {
