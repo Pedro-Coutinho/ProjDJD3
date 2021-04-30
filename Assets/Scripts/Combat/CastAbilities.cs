@@ -159,6 +159,9 @@ public class CastAbilities : MonoBehaviour
 
                 // Set Frame
                 ability_1Frame.sprite = silverFrame;
+
+                // Add xp to ability when used
+                playerStats.equipedLeftAbility.xp += 1;
             }
             else if (Ab == 2 && canShootAbility2)
             {
@@ -170,6 +173,9 @@ public class CastAbilities : MonoBehaviour
 
                 // Set Frame
                 ability_2Frame.sprite = silverFrame;
+
+                // Add xp to ability when used
+                playerStats.equipedRightAbility.xp += 1;
             }
             
         }
