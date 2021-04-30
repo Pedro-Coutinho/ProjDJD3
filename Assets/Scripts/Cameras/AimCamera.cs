@@ -17,6 +17,7 @@ public class AimCamera : MonoBehaviour
     public GameObject CameraAim2;
 
     public GameObject player;
+    private Animator animator;
 
     private GameObject[] Enemies;
 
@@ -33,7 +34,7 @@ public class AimCamera : MonoBehaviour
     //private bool lockedOnEnemy = false;
     private void Start()
     {
-        
+        animator = player.GetComponent<Animator>();
         enemysOnCameraView = new List<GameObject>();
         playerData.playerControls.Gameplay.Aim.performed += ctx => Aim();
         playerData.playerControls.Gameplay.Aim.canceled += ctx => CancelAim();
@@ -188,6 +189,7 @@ public class AimCamera : MonoBehaviour
             CameraAim.SetActive(true);
             CameraNormal.SetActive(false);
             aiming = true;
+            animator.SetBool("Aim", aiming);
 
             playerData.speed = playerData.aimingSpeed;
         }
@@ -208,6 +210,7 @@ public class AimCamera : MonoBehaviour
             CameraAim.SetActive(false);
             CameraAim2.SetActive(false);
             aiming = false;
+            animator.SetBool("Aim", aiming);
             StartCoroutine(EnemyLockFalse());
 
             playerData.speed = playerData.normalSpeed;

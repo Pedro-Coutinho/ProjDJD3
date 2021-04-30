@@ -148,6 +148,8 @@ public class ThirdPersonMovment : MonoBehaviour
         float previousSpeed = currentSpeed;
         float horizontal = move.x;
         float vertical = move.y;
+        Debug.Log("X = " + move.x);
+        Debug.Log("Y = " + move.y);
         Vector3 directon = new Vector3(horizontal, 0f, vertical).normalized;
         if (directon.magnitude >= 0.8f)
         {
@@ -188,6 +190,9 @@ public class ThirdPersonMovment : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0f, MainCamera.transform.rotation.eulerAngles.y, 0f);
         }
+
+        animator.SetFloat("X", move.x);
+        animator.SetFloat("Y", move.y);
     }
 
     private void Gravity()
