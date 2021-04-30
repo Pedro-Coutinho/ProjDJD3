@@ -15,7 +15,8 @@ MonoBehaviour:
   type: 0
   abilityPrefab: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6, type: 3}
   icon: {fileID: 21300000, guid: 62ce59ce09148c847b198159a3abc9f6, type: 3}
-  level: 0
+  level: 1
+  xp: 4
   cooldowTime: 10
   range: 30
   damage: 5

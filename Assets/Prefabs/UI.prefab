@@ -3122,6 +3122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainAbility: {fileID: 11400000, guid: e74541a4747c1a54c98721a1c27de827, type: 2}
+  burstAbility: {fileID: 11400000, guid: 8585c78c95f0ea4428ea73dc2c7147b4, type: 2}
+  displayIcon: {fileID: 2118965328}
   UiAbilityEvolution: {fileID: 1909366292}
   text: {fileID: 614787449}
 --- !u!1 &8279720601359691951

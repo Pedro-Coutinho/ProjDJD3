@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-public class ParticleCollision : MonoBehaviour
+
+public class BurstCollision : MonoBehaviour
 {
     public GameObject PopUpDmg;
     void Start()
@@ -32,20 +33,10 @@ public class ParticleCollision : MonoBehaviour
             {
                 GameObject pText = Instantiate(PopUpDmg, e.HitPoint + new Vector3(0, 1, 0), Quaternion.identity);
 
-                
+                pText.GetComponent<TextMeshPro>().text = 2.ToString();
                 pText.GetComponent<TextMeshPro>().color = new Color(255, 239, 0, 255);
                 Debug.Log(transform.name);
-                if (transform.name == "Burst(Clone)")
-                {
-                    pText.GetComponent<TextMeshPro>().text = 5.ToString();
-                    e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 5;
-                } 
-                else
-                {
-                    pText.GetComponent<TextMeshPro>().text = 2.ToString();
-                    e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 2;
-                }
-                    
+                e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 6;
             }
             else
             {
@@ -55,21 +46,11 @@ public class ParticleCollision : MonoBehaviour
                 pText.GetComponent<TextMeshPro>().text = 1.ToString();
                 pText.GetComponent<TextMeshPro>().color = new Color(255, 255, 255, 255);
 
-                if (transform.name == "Burst(Clone)")
-                {
-                    pText.GetComponent<TextMeshPro>().text = 3.ToString();
-                    e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 3;
-                }  
-                else
-                {
-                    pText.GetComponent<TextMeshPro>().text = 1.ToString();
-                    e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 1;
-                }
-                    
+                e.HitGameObject.transform.GetComponent<Enemy>().currentHealth -= 4;
             }
-            
+
         }
-            
+
     }
 
     // Destroys this after some time

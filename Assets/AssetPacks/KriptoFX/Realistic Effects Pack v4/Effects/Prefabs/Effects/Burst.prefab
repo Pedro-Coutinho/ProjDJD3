@@ -9289,9 +9289,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4709693737692316}
   - component: {fileID: 114595567569386552}
-  - component: {fileID: 429782222291199343}
+  - component: {fileID: -442082766064714687}
+  - component: {fileID: -8574910247177865018}
   m_Layer: 13
-  m_Name: Basic_1
+  m_Name: Burst
   m_TagString: PlayerAtack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9338,7 +9339,20 @@ MonoBehaviour:
   Speed: 200
   AirDrag: 0
   UseGravity: 0
---- !u!114 &429782222291199343
+--- !u!114 &-442082766064714687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748139164946814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ae532604370aa46a340c9be4d76ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopUpDmg: {fileID: 9075310012111163217, guid: 18fb2be996937ad44a047b2932e5c129, type: 3}
+--- !u!114 &-8574910247177865018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
