@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50ebf7a75e39d4f4893f473f7af6e56f, type: 3}
-  m_Name: EnemyType2
+  m_Name: Cultist
   m_EditorClassIdentifier: 
   health: 4
-  rangeToShoot: 40
+  rangeToShoot: 25
   areaOfEffect: 1
   spreadShoot: 0
-  shootTimeCicle: 0
+  shootTimeCicle: 1.5
   nbrOfCurrencySpawned: 4

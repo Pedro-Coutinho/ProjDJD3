@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   enemylock: 0
-  currentEnemyPosition: {x: 117, y: 200.80998, z: 31.540003}
+  currentEnemyPosition: {x: 64.85, y: 200.80998, z: 26.86}
   speed: 7.6
   aimingSpeed: 4.5
   normalSpeed: 7.6
@@ -24,4 +24,4 @@ MonoBehaviour:
   maxGravity: -20
   jumpSpeed: 7.8
   doubleJumpMultiplier: 1.7
-  shootDist: 30
+  shootDist: 22
