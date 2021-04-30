@@ -16,9 +16,6 @@ MonoBehaviour:
   rangeToShoot: 25
   areaOfEffect: 1
   spreadShoot: 0
-<<<<<<< HEAD:Assets/Scripts/Data/Enemies/EnemyType2.asset
-  shootTimeCicle: 3
-=======
+
   shootTimeCicle: 1.5
->>>>>>> upstream/master:Assets/Scripts/Data/Enemies/Cultist.asset
   nbrOfCurrencySpawned: 4
