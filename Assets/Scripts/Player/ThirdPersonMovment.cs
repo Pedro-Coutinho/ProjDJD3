@@ -13,6 +13,7 @@ public class ThirdPersonMovment : MonoBehaviour
     public GameObject MainCamera;
     public Player playerData;
     public PlayerStats playerStats;
+    public LayerMask layerMask;
     
     public Transform cam;
     public GameObject[] staminaBars;
@@ -37,6 +38,8 @@ public class ThirdPersonMovment : MonoBehaviour
     private int currentStamina;
 
     private bool playIdleVariant = true;
+
+    private bool backImpulse = false;
 
     private void Awake()
     {
@@ -206,7 +209,31 @@ public class ThirdPersonMovment : MonoBehaviour
 
             directionY += gravityDirection * -playerData.currentGravity * Time.unscaledDeltaTime;
         }
-        
+
+        // If the ground Plane has more than 40 degrees of inclination, then aplie a force 
+        RaycastHit hit;
+        Vector3 normal;
+        if (Physics.SphereCast(transform.position + new Vector3(0, controler.height / 2, 0), controler.radius, -transform.up, out hit, 10, ~layerMask))
+        {
+            normal = hit.normal;
+            float ang = Vector3.Angle(normal, Vector3.up);
+
+            Debug.Log(hit.collider.name);
+            if (ang >= 40 && backImpulse == false && IsGrounded())
+            {
+                Vector3 P = Vector3.Cross(normal, Vector3.up);
+
+                float q = Mathf.Acos(Vector3.Dot(normal, Vector3.up));
+                
+                directionY += (Vector3.ProjectOnPlane(Vector3.down, normal) * -playerData.currentGravity * Time.unscaledDeltaTime);
+            }
+            else if(backImpulse == false)
+            {
+                directionY = new Vector3(0, directionY.y, 0);
+            }
+
+        }
+
     }
     private bool IsGrounded()
     {
@@ -221,16 +248,19 @@ public class ThirdPersonMovment : MonoBehaviour
                 animator.Play("RunJump", 0, 0.2f);
             else
                 animator.Play("Jump");
+
+            // If the ground has more than 40 degrees and the player jump, the jump direction then is the ground normal
             RaycastHit hit;
             Vector3 normal;
-            if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), -transform.up, out hit, 10))
+            if (Physics.SphereCast(transform.position + new Vector3(0, controler.height / 2, 0), controler.radius, -transform.up, out hit, 10, ~layerMask))
             {
                 normal = hit.normal;
                 float ang = Vector3.Angle(normal, Vector3.up);
                 
-                if (ang >= 40)
+                if (ang >= 40 )
                 {
                     directionY = normal * playerData.jumpSpeed;
+                    backImpulse = true;
                     Debug.Log(ang);
                     playerData.playerControls.Gameplay.Disable();
                     StartCoroutine(StopBackImpluse());
@@ -257,6 +287,7 @@ public class ThirdPersonMovment : MonoBehaviour
     IEnumerator StopBackImpluse()
     {
         yield return new WaitForSeconds(0.5f);
+        backImpulse = false;
         playerData.playerControls.Gameplay.Enable();
         directionY.x = 0;
         directionY.z = 0;
